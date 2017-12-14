@@ -20,5 +20,5 @@ var_dump($result_decode);
 ?>
 <br>
 <?php
-echo $result_decode["displayName"];
+echo $result_decode->displayName;
 ?>
