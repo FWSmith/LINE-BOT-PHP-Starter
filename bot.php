@@ -13,15 +13,22 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			$userId = $event['source']['userId'];
-			$getUserInfo = file_get_contents("https://api.line.me/v2/bot/profile/".$userId);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
 			// Build message to reply back
 			if($text == 'สวัสดี'){
+			$url_user = 'https://api.line.me/v2/bot/profile/U72c641a79b2f1a785a7b362df99931ae';
+			$headers_url = array('Authorization: Bearer ' . $access_token);
+			$ch_user = curl_init($url_user);
+			curl_setopt($ch_user, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch_user, CURLOPT_HTTPHEADER, $headers_url);
+			curl_setopt($ch_user, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch_user);
+			curl_close($ch_user);
+			$result_decode = json_decode($result);
 			$messages = [
 			'type' => 'text',
-			'text' => $getUserInfo['displayName']
+			'text' => $result_decode['displayName']
 			];
 			}else{
 			$messages = [
