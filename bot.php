@@ -17,20 +17,9 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if($text == 'สวัสดี'){
-		        $bot = new \LINE\LINEBot(new CurlHTTPClient('BdAQ3QuQX+ssTW55tgg2sJD911e0SN6/MmuTkXhxf16RTG3wqTibikzS0e2Vx0vCC3JqMNLSsenThtxSlG9dh2t8h/7OArNWet9tjYqAI/NgPc7TgIQwzJdk4VgUFJpirHRJgqdfL8v4QwsEaGiaBwdB04t89/1O/w1cDnyilFU='), [
-    'channelSecret' => 'c4ea2ce622a3679e368e49505cd09317'
-]);
-
-$res = $bot->getProfile('user-id');
-if ($res->isSucceeded()) {
-    $profile = $res->getJSONDecodedBody();
-    $displayName = $profile['displayName'];
-    $statusMessage = $profile['statusMessage'];
-    $pictureUrl = $profile['pictureUrl'];
-}
 			$messages = [
 			'type' => 'text',
-			'text' => $displayName
+			'text' => 'สวัสดีครับเจ้านาย'
 			];
 			}else{
 			$messages = [
