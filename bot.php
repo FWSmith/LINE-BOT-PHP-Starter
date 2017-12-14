@@ -14,7 +14,6 @@ if (!is_null($events['events'])) {
 			$text = $event['message']['text'];
 			$userId = $event['source']['userId'];
 			$getUserInfo = file_get_contents("https://api.line.me/v2/bot/profile/".$userId);
-			$Decode_UserInfo = json_decode($getUserInfo, true);
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -22,7 +21,7 @@ if (!is_null($events['events'])) {
 			if($text == 'สวัสดี'){
 			$messages = [
 			'type' => 'text',
-			'text' => $Decode_UserInfo['displayName']
+			'text' => $getUserInfo['displayName']
 			];
 			}else{
 			$messages = [
