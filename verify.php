@@ -12,5 +12,9 @@ $result = curl_exec($ch);
 curl_close($ch);
 
 echo $result;
-var_dump($result);
+$result_decode = json_decode($result);
+?>
+<br>
+<?php
+var_dump($result_decode);
 ?>
