@@ -13,3 +13,6 @@ curl_close($ch);
 
 echo $result;
 ?>
+<script>
+   console.log(<?=$result?>);
+</script>
