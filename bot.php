@@ -16,10 +16,18 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+			if($text == 'สวัสดี'){
 			$messages = [
-				'type' => 'text',
-				'text' => 'สวัสดี'
+			'type' => 'text',
+			'text' => 'สวัสดีครับเจ้านาย'
 			];
+			}else{
+			$messages = [
+			'type' => 'text',
+			'text' => 'ตอนนี้ยังไม่รู้เรื่อง ขอเวลาศึกษาแปป'
+			];	
+			}
+			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
