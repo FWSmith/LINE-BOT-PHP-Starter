@@ -14,5 +14,5 @@ curl_close($ch);
 echo $result;
 ?>
 <script>
-   console.log(<?=json_decode($result, true)?>);
+   console.log(<?$result['displayName']?>);
 </script>
