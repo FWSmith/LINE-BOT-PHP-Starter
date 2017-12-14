@@ -18,3 +18,7 @@ $result_decode = json_decode($result);
 <?php
 var_dump($result_decode);
 ?>
+<br>
+<?php
+echo $result_decode["displayName"];
+?>
