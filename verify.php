@@ -14,5 +14,5 @@ curl_close($ch);
 echo $result;
 ?>
 <script>
-   console.log(<?$result->displayName?>);
+   console.log(<?=$result['displayName']?>);
 </script>
