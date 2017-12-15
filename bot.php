@@ -13,15 +13,27 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
 			$text = $event['message']['text'];
+			//Get Group ID
+			$groupId = $event['source']['groupId'];
+			//Get User ID
+			$userId = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-
+                      
 			// Build message to reply back
 			if($text == 'สวัสดี'){
+			  if($groupId != '' && $userId != ''){
 			  $messages = [
-			  'type' => 'text',
-			  'text' => 'สวัสดีครับ เจ้านาย'
-			  ];
+			    'type' => 'text',
+			    'text' => 'สวัสดีครับ เจ้านาย คุณกำลังอยู่ในกลุ่ม'
+			  ];  	  
+			  }else{
+			  $messages = [
+			    'type' => 'text',
+			    'text' => 'สวัสดีครับ เจ้านาย'
+			  ];  
+			  }
+			  
 			}else{
 			  $messages = [
 			  'type' => 'text',
