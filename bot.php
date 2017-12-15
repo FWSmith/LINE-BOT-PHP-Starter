@@ -92,6 +92,8 @@ if (!is_null($events['events'])) {
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
+				 $status_json = array("status" => 'false');
+				 $create_file = file_put_contents('status.json');
 				 $messages = [
 					 [
 			                    'type' => 'text',
