@@ -17,10 +17,19 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			// Build message to reply back
 			if($text == 'สวัสดี'){
-			$messages = [
-			'type' => 'text',
-			'text' => $groupId
-			];
+		          if($groupId != '' && $userId != ''){
+			   $messages = [
+			     'type' => 'text',
+			     'text' => $groupId
+			   ];
+			  }else{
+		             $messages = [
+			     'type' => 'text',
+			     'text' => $groupId
+			   ];
+			  }
+		
+			
 			}else{
 			$messages = [
 			'type' => 'text',
