@@ -2,6 +2,7 @@
 $access_token = 'BdAQ3QuQX+ssTW55tgg2sJD911e0SN6/MmuTkXhxf16RTG3wqTibikzS0e2Vx0vCC3JqMNLSsenThtxSlG9dh2t8h/7OArNWet9tjYqAI/NgPc7TgIQwzJdk4VgUFJpirHRJgqdfL8v4QwsEaGiaBwdB04t89/1O/w1cDnyilFU=';
 // Get POST body content
 $content = file_get_contents('php://input');
+$headers = array('Authorization: Bearer ' . $access_token);
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
@@ -18,9 +19,18 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			if($text == 'สวัสดี'){
 		          if($groupId != '' && $userId != ''){
+	
+		           $url_gp = 'https://api.line.me/v2/bot/group/$groupId/member/$userId';
+                           $ch_gp = curl_init($url_gp);
+                           curl_setopt($ch_gp, CURLOPT_RETURNTRANSFER, true);
+                           curl_setopt($ch_gp, CURLOPT_HTTPHEADER, $headers);
+                           curl_setopt($ch_gp, CURLOPT_FOLLOWLOCATION, 1);
+                           $result_gp = curl_exec($ch_gp);
+                           curl_close($ch_gp);
+		           
 			   $messages = [
 			     'type' => 'text',
-			     'text' => $groupId
+			     'text' => $result_gp->displayName
 			   ];
 			  }else{
 		             $messages = [
@@ -45,7 +55,6 @@ if (!is_null($events['events'])) {
 				'messages' => [$messages],
 			];
 			$post = json_encode($data);
-			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
