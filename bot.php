@@ -92,11 +92,10 @@ if (!is_null($events['events'])) {
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
-				 $status = false;
 				 $messages = [
 					 [
 			                    'type' => 'text',
-			                    'text' => $status
+			                    'text' => 'คนใช้เงียบแล้วค้าบ'
 				         ]
 			         ];  
 			     }
