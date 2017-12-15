@@ -145,10 +145,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-$host = "fsmith.net";
-$user = "fsmithnet_root";
-$pass = "Chanan22lert";
-$dbname = "fsmithnet_license";
-$pdo = new PDO("mysql:dbname=$dbname;host=$host", $user, $pass);
 echo "OK";
 ?>
