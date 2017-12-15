@@ -31,9 +31,10 @@ if (!is_null($events['events'])) {
                            curl_setopt($ch_gp, CURLOPT_FOLLOWLOCATION, 1);
                            $result_gp = curl_exec($ch_gp);
                            curl_close($ch_gp);
+		           $result_decode = json_decode($result);
 			  $messages = [
 			    'type' => 'text',
-			    'text' => 'สวัสดีครับ เจ้านาย '.$result_gp->displayName
+			    'text' => 'สวัสดีครับ เจ้านาย '.$result_decode->displayName
 			  ];  	  
 			  }else{
 			  $messages = [
