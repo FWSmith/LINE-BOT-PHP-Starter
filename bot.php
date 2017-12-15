@@ -77,9 +77,9 @@ if (!is_null($events['events'])) {
 			     if(strpos($text, 'เงียบ')!== false){
 				 $messages = [
 			          'type' => 'text',
-			          'text' => 'ไปละครับ บ้ายบาย
+			          'text' => 'ไปละครับ บ้ายบาย'
 			         ];  
-				 $status = 'shutdown'
+				 $status = 'shutdown';
 			     }
 				
 			}else{
