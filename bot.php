@@ -5,7 +5,7 @@ $access_token = 'BdAQ3QuQX+ssTW55tgg2sJD911e0SN6/MmuTkXhxf16RTG3wqTibikzS0e2Vx0v
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
-// Validate parsed JSON data
+$status = false;// Validate parsed JSON data
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
@@ -18,11 +18,10 @@ if (!is_null($events['events'])) {
 			//Get User ID
 			$userId = $event['source']['userId'];
 			// Get replyToken
-			$status = 'start';
 			$replyToken = $event['replyToken'];
                         
 			// Build message to reply back
-			if($status == 'shutdown'){
+			if($status == false){
 			  $messages = [
 			    'type' => 'text',
 			    'text' => 'ปิดระบบแล้วครับ'
@@ -32,7 +31,7 @@ if (!is_null($events['events'])) {
 			        $status = 'start';
 			     } 
 			  }
-			}else if($status == 'start'){
+			}else if($status == true){
 			
 			if(strpos($text, 'สวัสดี') !== false){
 			  if($groupId != '' && $userId != ''){
@@ -80,7 +79,7 @@ if (!is_null($events['events'])) {
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
-				 $status = 'shutdown';
+				 $status = false;
 				 $messages = [
 			          'type' => 'text',
 			          'text' => 'ไปละครับ บ้ายบาย'
