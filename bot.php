@@ -18,8 +18,9 @@ if (!is_null($events['events'])) {
 			//Get User ID
 			$userId = $event['source']['userId'];
 			// Get replyToken
+			$status = 'start';
 			$replyToken = $event['replyToken'];
-                      
+                        
 			// Build message to reply back
 			if($status == 'shutdown'){
 			  if(strpos($text, 'คนใช้') !== false){
