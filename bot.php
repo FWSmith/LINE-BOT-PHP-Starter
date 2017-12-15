@@ -35,11 +35,22 @@ if (!is_null($events['events'])) {
 		           $Name = $result_decode->displayName;
 		           if (strpos($Name, 'FÖRT') !== false) {
 		             $Display_Name = 'โฟร์ท';
-		           }
-			  $messages = [
+			     $messages = [
 			    'type' => 'text',
 			    'text' => 'สวัสดีครับ เจ้านาย '.$Display_Name
-			  ];  	  
+			     ],
+			     $messages = [
+			    'type' => 'text',
+			    'text' => 'มีอะไรรับใช้ครับ'
+			     ]   ;  	 
+		           }else if(strpos($Name, 'KAN') !== false){
+			     $Display_Name = 'กัน';
+			     $messages = [
+			    'type' => 'text',
+			    'text' => 'สวัสดีครับ พี่'.$Display_Name
+			     ];     
+			   }
+			   
 			  }else{
 			  $messages = [
 			    'type' => 'text',
