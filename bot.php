@@ -67,7 +67,7 @@ if (!is_null($events['events'])) {
 				  "altText": "this is a buttons template",
 				  "template": {
 				      "type": "buttons",
-				      "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
+				      "thumbnailImageUrl": "https://vignette.wikia.nocookie.net/geosworld/images/0/09/Toon_link.jpg/revision/latest?cb=20131223183834",
 				      "imageAspectRatio": "rectangle",
 				      "imageSize": "cover",
 				      "imageBackgroundColor": "#FFFFFF",
