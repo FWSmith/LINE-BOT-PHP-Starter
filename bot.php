@@ -11,7 +11,16 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			$text = $event['message']['text'];
+			if(strpos($event['message']['text'], 'คนใช้') !== false){
+				if(strpos($event['message']['text'], 'พุด') !== false){
+					$status == true;
+				}	
+			}
+			if($status == false){
+			   $text = '';
+			}else{
+			   $text = $event['message']['text'];				
+			}
 			//Get Group ID
 			$groupId = $event['source']['groupId'];
 			//Get User ID
