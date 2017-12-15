@@ -37,56 +37,71 @@ if (!is_null($events['events'])) {
 		           if (strpos($Name, 'FÖRT') !== false) {
 		             $Display_Name = 'โฟร์ท';
 			     $messages = [
-			    'type' => 'text',
-			    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+			    	[
+				    'type' => 'text',
+			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+				]
 			    ];  	 
 		           }else if(strpos($Name, 'KAN') !== false){
 			     $Display_Name = 'กัน';
 			     $messages = [
-			    'type' => 'text',
-			    'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+				     [
+			    		'type' => 'text',
+			    		'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+				     ]
 			     ];     
 			   }else{
 			     $messages = [
-			    'type' => 'text',
-			    'text' => 'สวัสดีครับ พี่'.$Name.' มีอะไรให้รับใช้ครับ'
+			    	[
+			    	'type' => 'text',
+			    	'text' => 'สวัสดีครับ พี่'.$Name.' มีอะไรให้รับใช้ครับ'
+				]
 			     ];     
 			   }
 			   
 			  }else{
 			  $messages = [
-			    'type' => 'text',
-			    'text' => 'สวัสดีครับ เจ้านาย'
+			    [
+				 'type' => 'text',
+			         'text' => 'สวัสดีครับ เจ้านาย'
+			    ]
 			  ];  
 			  }
 			  
 			}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false){
 			    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
-			    $messages = array(
-				    array(
+			    $messages = [
+				    [
 				       "type"=>"text", 
 				       "text"=>"เบอร์ของคุณโฟร์ท คือ 0955305914"
-				    ),
-				    array(
+				    ],
+				    [
 				       "type"=>"text", 
 				       "text"=>"ยินดีให้บริการครับ"
-				    )
-			    );
+				    ]
+			    ];
 			    }else{
-		            $messages = array("type"=>"text", "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ");
+		            $messages = [
+				    "type"=>"text", 
+				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
+			    ];
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
 				 $messages = [
-			          'type' => 'text',
-			          'text' => 'ไปละครับ บ้ายบาย'
+					 [
+			                    'type' => 'text',
+			                    'text' => 'ไปละครับ บ้ายบาย'
+				         ]
 			         ];  
 			     }
 				
 			}else{
 			    $messages = [
-			    'type' => 'text',
-			    'text' => 'คำพูดนี้ยังไม่ได้เรียนรู้ครับ'
+				[
+			    	'type' => 'text',
+			    	'text' => 'คำพูดนี้ยังไม่ได้เรียนรู้ครับ'
+				]
 			    ];  
 			}
 		      
@@ -95,7 +110,7 @@ if (!is_null($events['events'])) {
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => [$messages][0],
+				'messages' => [$messages],
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
