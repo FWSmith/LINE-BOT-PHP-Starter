@@ -11,7 +11,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-		 $text = $event['message']['text'];				
+		 	$text = $event['message']['text'];				
 			//Get Group ID
 			$groupId = $event['source']['groupId'];
 			//Get User ID
@@ -21,7 +21,18 @@ if (!is_null($events['events'])) {
                         
 			// Build message to reply back
 
-
+			if(strpos($text, 'ทดสอบ') !== false){
+			   $messages = [
+			    	[
+				    'type' => 'text',
+			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name
+				],
+				[
+				    'type' => 'text',
+				    'text' => 'ตอนนี้ ค่า status มีค่า'.$status
+				]
+			    ];  
+			}
 			if(strpos($text, 'สวัสดี') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
