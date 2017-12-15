@@ -21,18 +21,7 @@ if (!is_null($events['events'])) {
                         
 			// Build message to reply back
 
-			if(strpos($text, 'ทดสอบ') !== false){
-			   $messages = [
-			    	[
-				    'type' => 'text',
-			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name
-				],
-				[
-				    'type' => 'text',
-				    'text' => 'ตอนนี้ ค่า status มีค่า'.$status
-				]
-			    ];  
-			}
+			
 			if(strpos($text, 'สวัสดี') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -112,6 +101,17 @@ if (!is_null($events['events'])) {
 			         ];  
 			     }
 				
+			}else if(strpos($text, 'ทดสอบ') !== false){
+			   $messages = [
+			    	[
+				    'type' => 'text',
+			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name
+				],
+				[
+				    'type' => 'text',
+				    'text' => 'ตอนนี้ ค่า status มีค่า'.$status
+				]
+			    ];  
 			}else{
 			    $messages = [
 				[
