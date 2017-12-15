@@ -76,11 +76,11 @@ if (!is_null($events['events'])) {
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
+				 $status = 'shutdown';
 				 $messages = [
 			          'type' => 'text',
 			          'text' => 'ไปละครับ บ้ายบาย'
 			         ];  
-				 $status = 'shutdown';
 			     }
 				
 			}else{
