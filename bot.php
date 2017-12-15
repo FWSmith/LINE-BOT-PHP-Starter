@@ -36,13 +36,14 @@ if (!is_null($events['events'])) {
 		           if (strpos($Name, 'FÖRT') !== false) {
 		             $Display_Name = 'โฟร์ท';
 			     $messages = [
+		            {
 			    'type' => 'text',
 			    'text' => 'สวัสดีครับ เจ้านาย '.$Display_Name
-			     ],
-			     $messages = [
+			    },
+			    {
 			    'type' => 'text',
 			    'text' => 'มีอะไรรับใช้ครับ'
-			     ]   ;  	 
+			    }];  	 
 		           }else if(strpos($Name, 'KAN') !== false){
 			     $Display_Name = 'กัน';
 			     $messages = [
