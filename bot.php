@@ -23,6 +23,10 @@ if (!is_null($events['events'])) {
                         
 			// Build message to reply back
 			if($status == 'shutdown'){
+			  $messages = [
+			    'type' => 'text',
+			    'text' => 'ปิดระบบแล้วครับ'
+			     ];     
 			  if(strpos($text, 'คนใช้') !== false){
 			     if(strpos($text, 'พูด') !== false){
 			        $status = 'start';
