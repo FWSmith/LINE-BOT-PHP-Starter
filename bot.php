@@ -61,8 +61,9 @@ if (!is_null($events['events'])) {
 			  
 			}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false){
 			    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
-			   
 			    $messages = array("type"=>"text", "text"=>"เบอร์ของคุณโฟร์ท คือ 0955305914 ยินดีรับใช้ครับ");
+			    }else{
+		            $messages = array("type"=>"text", "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ");
 			    }
 			}
 			
