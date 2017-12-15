@@ -33,9 +33,9 @@ if (!is_null($events['events'])) {
 		           $result_decode = json_decode($result_gp);
                            curl_close($ch_gp);
 		           $Name = $result_decode->displayName;
-		           if ($Name == "FORT") {
-			    $Display_Name = "โฟร์ท"
-			  }
+		           if (strpos($Name, 'FORT') !== false) {
+		             $Display_Name = 'โฟร์ท';
+		           }
 			  $messages = [
 			    'type' => 'text',
 			    'text' => 'สวัสดีครับ เจ้านาย '.$Display_Name
