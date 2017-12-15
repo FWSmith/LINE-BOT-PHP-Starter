@@ -45,6 +45,11 @@ if (!is_null($events['events'])) {
 			    'type' => 'text',
 			    'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
 			     ];     
+			   }else{
+			     $messages = [
+			    'type' => 'text',
+			    'text' => 'สวัสดีครับ พี่'.$Name.' มีอะไรให้รับใช้ครับ'
+			     ];     
 			   }
 			   
 			  }else{
