@@ -36,19 +36,14 @@ if (!is_null($events['events'])) {
 		           if (strpos($Name, 'FÖRT') !== false) {
 		             $Display_Name = 'โฟร์ท';
 			     $messages = [
-		            {
 			    'type' => 'text',
-			    'text' => 'สวัสดีครับ เจ้านาย '.$Display_Name
-			    },
-			    {
-			    'type' => 'text',
-			    'text' => 'มีอะไรรับใช้ครับ'
-			    }];  	 
+			    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+			    ];  	 
 		           }else if(strpos($Name, 'KAN') !== false){
 			     $Display_Name = 'กัน';
 			     $messages = [
 			    'type' => 'text',
-			    'text' => 'สวัสดีครับ พี่'.$Display_Name
+			    'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
 			     ];     
 			   }
 			   
@@ -68,7 +63,7 @@ if (!is_null($events['events'])) {
 			
 
 			// Make a POST Request to Messaging API to reply to sender
-			$url = 'https://api.line.me/v2/bot/message/multicast';
+			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
