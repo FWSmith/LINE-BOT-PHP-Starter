@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			if($status == 'shutdown'){
 			  if(strpos($text, 'คนใช้') !== false){
 			     if(strpos($text, 'พูด') !== false){
-			        $status = 'start'
+			        $status = 'start';
 			     } 
 			  }
 			}else if($status == 'start'){
