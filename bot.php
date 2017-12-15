@@ -1,27 +1,5 @@
 <?php
 $access_token = 'BdAQ3QuQX+ssTW55tgg2sJD911e0SN6/MmuTkXhxf16RTG3wqTibikzS0e2Vx0vCC3JqMNLSsenThtxSlG9dh2t8h/7OArNWet9tjYqAI/NgPc7TgIQwzJdk4VgUFJpirHRJgqdfL8v4QwsEaGiaBwdB04t89/1O/w1cDnyilFU=';
-function file_force_contents($file_path, $content, $flag = LOCK_EX)
-{	
-	if ($file_path[0] != '/')
-	{
-		$file_path = DOCROOT.$file_path;
-	}
-
-	$dirname = pathinfo($file_path, PATHINFO_DIRNAME);
-
-	// Create directories if not exists
-	if ( ! file_exists($dirname))
-	{
-		// Create dirs
-		mkdir($dirname, 0777, TRUE);
-
-		// Set permissions (must be manually set to fix umask issues)
-		chmod($dirname, 0777);
-	}
-
-	// Create file
-	return (bool) file_put_contents($file_path, $content, $flag);   
-}
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -113,7 +91,6 @@ if (!is_null($events['events'])) {
 			    }
 			}else if(strpos($text, 'คนใช้')!== false){
 			     if(strpos($text, 'เงียบ')!== false){
-				 file_force_contents("test.txt","Hello World. Testing!");
 				 $messages = [
 					 [
 			                    'type' => 'text',
