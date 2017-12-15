@@ -39,7 +39,11 @@ if (!is_null($events['events'])) {
 			     $messages = [
 			    	[
 				    'type' => 'text',
-			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name
+				],
+				[
+				    'type' => 'text',
+				    'text' => 'มีอะไรให้รับใช้ครับ'
 				]
 			    ];  	 
 		           }else if(strpos($Name, 'KAN') !== false){
