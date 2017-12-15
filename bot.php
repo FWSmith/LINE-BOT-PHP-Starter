@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			if($text == 'สวัสดี'){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
-		           $url_gp = 'https://api.line.me/v2/bot/group/$groupId/member/$userId';
+		           $url_gp = 'https://api.line.me/v2/bot/group/'.$groupId.'/member/'.$userId.'';
                            $ch_gp = curl_init($url_gp);
                            curl_setopt($ch_gp, CURLOPT_RETURNTRANSFER, true);
                            curl_setopt($ch_gp, CURLOPT_HTTPHEADER, $headers_gp);
