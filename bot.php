@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 		           $result_decode = json_decode($result_gp);
                            curl_close($ch_gp);
 		           $Name = $result_decode->displayName;
-		           if (strpos($Name, 'FORT') !== false) {
+		           if (strpos($Name, 'FRT') !== false) {
 		             $Display_Name = 'โฟร์ท';
 		           }
 			  $messages = [
