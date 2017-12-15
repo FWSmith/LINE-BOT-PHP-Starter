@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 		           $result_decode = json_decode($result_gp);
                            curl_close($ch_gp);
 		           $Name = $result_decode->displayName;
-		           if (substr_count($Name, 'FORT') > 0) {
+		           if ($Name == "FORT") {
 			    $Display_Name = "โฟร์ท"
 			  }
 			  $messages = [
