@@ -21,6 +21,14 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
                       
 			// Build message to reply back
+			if($status == 'shutdown'){
+			  if(strpos($text, 'คนใช้') !== false){
+			     if(strpos($text, 'พูด') !== false){
+			        $status = 'start'
+			     } 
+			  }
+			}else if($status == 'start'){
+			
 			if(strpos($text, 'สวัสดี') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -65,8 +73,22 @@ if (!is_null($events['events'])) {
 			    }else{
 		            $messages = array("type"=>"text", "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ");
 			    }
+			}else if(strpos($text, 'คนใช้')!== false){
+			     if(strpos($text, 'เงียบ')!== false){
+				 $messages = [
+			          'type' => 'text',
+			          'text' => 'ไปละครับ บ้ายบาย
+			         ];  
+				 $status = 'shutdown'
+			     }
+				
+			}else{
+			    $messages = [
+			    'type' => 'text',
+			    'text' => 'คำพูดนี้ยังไม่ได้เรียนรู้ครับ'
+			    ];  
 			}
-			
+		      }
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
