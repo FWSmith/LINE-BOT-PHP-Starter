@@ -370,13 +370,13 @@ if (!is_null($events['events'])) {
 				    ]
 			    ];				    
 			    }else{
-		            $messages = [
+		            	$messages = [
+				[
 				    "type"=>"text", 
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
-			    ];
+				]
+			    	];
 			    }
-			}else{
-			   
 			}
 		      
 
