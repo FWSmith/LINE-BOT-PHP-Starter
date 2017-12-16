@@ -46,7 +46,7 @@ if (!is_null($events['events'])) {
 				]
 			    ];  	 
 		           }else if(strpos($Name, 'MΔÏ') !== false){
-			     $Display_Name = 'เมียพี่โฟร์ท';
+			     $Display_Name = 'น้องใหม่';
 			     $messages = [
 				     [
 			    		'type' => 'text',
