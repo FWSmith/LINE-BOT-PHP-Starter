@@ -303,7 +303,7 @@ if (!is_null($events['events'])) {
 				       "text"=>"ยินดีให้บริการครับ"
 				    ]
 			    ];				    
-			    }else if(strpos($text, 'ฟิว') !== false){
+			    }else if(strpos($text, 'ฟิว') !== false || strpos($text, 'ปลาทู') !== false){
 			    $messages = [
 				    [
 				       "type"=>"text", 
