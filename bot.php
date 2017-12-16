@@ -45,15 +45,12 @@ if (!is_null($events['events'])) {
 				    'text' => 'มีอะไรให้รับใช้ครับ'
 				]
 			    ];  	 
-		           }else if(strpos($Name, 'MΔ') !== false){
+		           }else if(strpos($Name, 'KAN') !== false){
+			     $Display_Name = 'กัน';
 			     $messages = [
 				     [
 			    		'type' => 'text',
-			    		'text' => 'สวัสดีครับ พี่ใหม่'
-				     ],
-				     [
-				    	'type' => 'text',
-				    	'text' => 'มีอะไรให้รับใช้ครับ'
+			    		'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
 				     ]
 			     ];     
 			   }else{
@@ -376,12 +373,6 @@ if (!is_null($events['events'])) {
 		            $messages = [
 				    "type"=>"text", 
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
-			    ];
-			    }
-			}else if(strpos($text, 'โย่') !== false)){
-			   $messages = [
-				    "type"=>"text", 
-				    "text"=>"อะไรๆ เจอได้นะ"
 			    ];
 			    }
 			}else{
