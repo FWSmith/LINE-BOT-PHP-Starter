@@ -9,4 +9,7 @@ $mysqli = new mysqli($server, $username, $password, $db);
 if ($mysqli->connect_errno) {
  echo "Failed to connect to MySQL: " . $mysqli->connect_error;
 }
+$result= $mysqli->query("SELECT * FROM bot_status");
+$row = $result->fetch_assoc();
+echo $row['bot_status'];
 ?>
