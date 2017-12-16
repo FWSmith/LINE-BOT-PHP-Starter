@@ -5,11 +5,10 @@ $server = 'us-cdbr-iron-east-05.cleardb.net';
 $username = 'b809e2f36f0522';
 $password = '01a9a1f5';
 $db = 'heroku_a0500905d74bead';
-$mysqli = new mysqli($server, $username, $password, $db);
-if ($mysqli->connect_errno) {
- echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-}
-$result= $mysqli->query("SELECT * FROM bot_status");
-$row = $result->fetch_assoc();
-echo $row['bot_status'];
+$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);
+$Select = "SELECT * FROM bot_status";
+$Query = $pdo->prepare($Select);
+$Query->execute();
+$Fetch = $Query->fetch(PDO::FETCH_ASSOC);
+echo $Fetch['idbot_status'];
 ?>
