@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
 			$Query_Status->execute();
 			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 			
-			if($Fetch_Status == 'false'){
+			if($Fetch_Status['bot_status'] == 'false'){
 				
 			}else{
 			if(strpos($text, 'สวัสดี') !== false || strpos($text, 'คนใช้') !== false){
