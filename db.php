@@ -6,10 +6,5 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 $conn = new mysqli($server, $username, $password, $db);
-if ($conn->connect_errno) {
- echo "Failed to connect to MySQL: " . $conn->connect_error;
-}
-$result= $conn->query("SELECT * FROM bot_status");
-$row = $result->fetch_assoc();
-echo $row['bot_status'];
+
 ?>
