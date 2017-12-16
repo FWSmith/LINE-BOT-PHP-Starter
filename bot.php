@@ -20,6 +20,7 @@ if (!is_null($events['events'])) {
                         
 			// Build message to reply back
 
+			
 			if(strpos($text, 'สวัสดี') !== false || strpos($text, 'คนใช้') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -374,35 +375,13 @@ if (!is_null($events['events'])) {
 			    ];				    
 			    }else{
 		            $messages = [
-				    [
 				    "type"=>"text", 
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
-				    ]
-			    ];
-			    }
-			}else if(strpos($text, 'เงียบ') !== false){
-			 $messages = [
-				    [
-				    "type"=>"text", 
-				    "text"=>"คนใช้เงียบแล้วครับ"
-				    ]
 			    ];
 			    }
 			}else{
-			$messages = [
-				    [
-				    "type"=>"text", 
-				    "text"=>"คนใช้ไม่ได้เรียนรู้คำนี้ครับ"
-				    ]
-			    ];
-			}					
-			
-
-
-			
-			
-			
-			
+			   
+			}
 		      
 
 			// Make a POST Request to Messaging API to reply to sender
