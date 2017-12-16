@@ -45,8 +45,7 @@ if (!is_null($events['events'])) {
 				    'text' => 'มีอะไรให้รับใช้ครับ'
 				]
 			    ];  	 
-		           }else if(strpos($Name, 'MΔÏ') !== false){
-			     $Display_Name = 'กัน';
+		           }else if(strpos($Name, 'MΔ') !== false){
 			     $messages = [
 				     [
 			    		'type' => 'text',
