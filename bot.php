@@ -378,7 +378,7 @@ if (!is_null($events['events'])) {
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
 			    ];
 			    }
-			}else if(strpos($text, 'โย่') !== false){
+			}else if(strpos($text, 'โย่') !== false)){
 			   $messages = [
 				    "type"=>"text", 
 				    "text"=>"อะไรๆ เจอได้นะ"
