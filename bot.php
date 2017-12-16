@@ -358,24 +358,23 @@ if (!is_null($events['events'])) {
 				       "text"=>"ยินดีให้บริการครับ"
 				    ]
 			    ];				    
+			    }else if(strpos($text, 'บูม') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของบูม คือ 0649626624"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
 			    }else{
 		            $messages = [
 				    "type"=>"text", 
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
 			    ];
 			    }
-			}else if(strpos($text, 'ทดสอบ') !== false){
-			    $file = 'people.txt';
-				// The new person to add to the file
-				$person = "John Smith\n";
-				// Write the contents to the file, 
-				// using the FILE_APPEND flag to append the content to the end of the file
-				// and the LOCK_EX flag to prevent anyone else writing to the file at the same time
-				file_put_contents($file, $person, FILE_APPEND | LOCK_EX);
-				$messages = [
-				    "type"=>"text", 
-				    "text"=>"ทำการสร้างไฟล์"
-			    ];
 			}else{
 			   
 			}
