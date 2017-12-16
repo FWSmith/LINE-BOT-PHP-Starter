@@ -6,9 +6,12 @@ $username = 'b809e2f36f0522';
 $password = '01a9a1f5';
 $db = 'heroku_a0500905d74bead';
 $pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);
-$Select = "SELECT * FROM bot_status";
-$Query = $pdo->prepare($Select);
+$Update = "UPDATE bot_status SET bot_status='false' WHERE idbot_status=1";
+$Query = $pdo->prepare($Update);
 $Query->execute();
-$Fetch = $Query->fetch(PDO::FETCH_ASSOC);
-echo $Fetch['idbot_status'];
+$Select = "SELECT * FROM bot_status";
+$Query_Bot = $pdo->prepare($Select);
+$Query_Bot->execute();
+$Fetch_Bot = $Query_Bot->fetch(PDO::FETCH_ASSOC);
+echo $Fetch_Bot['bot_status'];
 ?>
