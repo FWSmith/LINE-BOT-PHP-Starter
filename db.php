@@ -6,7 +6,7 @@ $username = 'b809e2f36f0522';
 $password = '01a9a1f5';
 $db = 'heroku_a0500905d74bead';
 $pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);
-$Update = "UPDATE bot_status SET bot_status='false' WHERE idbot_status=1";
+$Update = "UPDATE bot_status SET bot_status='true' WHERE idbot_status=1";
 $Query = $pdo->prepare($Update);
 $Query->execute();
 $Select = "SELECT * FROM bot_status";
