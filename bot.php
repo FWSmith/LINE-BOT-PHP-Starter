@@ -21,7 +21,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 
 			
-			if(strpos($text, 'สวัสดี') !== false){
+			if(strpos($text, 'สวัสดี') !== false || strpos($text, 'คนใช้') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
 		           $url_gp = 'https://api.line.me/v2/bot/group/'.$groupId.'/member/'.$userId.'';
@@ -71,7 +71,7 @@ if (!is_null($events['events'])) {
 			  ];  
 			  }
 			  
-			}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false){
+			}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
 			    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
 			    $messages = [
 				    [
@@ -83,40 +83,289 @@ if (!is_null($events['events'])) {
 				       "text"=>"ยินดีให้บริการครับ"
 				    ]
 			    ];
+			    }else if(strpos($text, 'พูม') !== false || strpos($text, 'คามิน') !== false || strpos($text, 'ภูม') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของคนสวยคามิน คือ 0833151921"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'กาน') !== false || strpos($text, 'กาญจน์') !== false || strpos($text, 'กาญ') !== false || strpos($text, 'อ้วน') !== false || strpos($text, 'หมู') !== false || strpos($text, 'แกมไทย') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของแกมไทย คือ 098825893"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'สอ') !== false || strpos($text, 'สรวิศ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของสรวิศ คือ 0967241444"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ณัฐพร') !== false || strpos($text, 'แช่มช้อย') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของณัฐพร คือ 0928253229"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ต๋ง') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของต๋ง คือ 0893463490"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ติ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของติ คือ 0856674817"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ทีน') !== false || strpos($text, '9น้ำ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของทีน คือ 0833554411"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ธิ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของธิ คือ 0953454049"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ณัฐพงศ์') !== false || strpos($text, 'นัทผอม') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของณัฐพงศ์ คือ 0871612152"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'เนย') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของเนย คือ 0923363361"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'บอย') !== false || strpos($text, 'เจริญ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของบอย คือ 0923472344"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'เบส') !== false || strpos($text, 'เครี่ยง') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของเบส คือ 0955513934"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'เบีย') !== false || strpos($text, 'เบียร์') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของเบียร์ คือ 0970256798"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ปราย') !== false || strpos($text, 'ปาย') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของปราย คือ 0922516654"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ปาลิกา') !== false || strpos($text, 'นัทสูง') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของปาลิกา คือ 0889955523"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'แป้ง') !== false || strpos($text, 'ภัท') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของแป้ง คือ 0863627889"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'พลอย') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของพลอย คือ 0951525392"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ปิ่น') !== false || strpos($text, 'เพชร') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของปิ่น คือ 0910189701"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'แพร') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของณัฐพงศ์ คือ 0929165763"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'แพรวสุ') !== false || strpos($text, 'สุภิตา') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของสุภิตา คือ 0885429898"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ฟิว') !== false || strpos($text, 'เมียโฟร์ท') !== false || strpos($text, 'เมียโฟท') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของฟิว คือ 0884564226"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'เมย์') !== false || strpos($text, 'เม') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของเมย์โกริ คือ 0861619592"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'แพรวสิ') !== false || strpos($text, 'สินี') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของสินี คือ 0870653107"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'กัน') !== false || strpos($text, 'กัญ') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของกัญจน์ คือ 0817427639"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
+			    }else if(strpos($text, 'ตี๋') !== false){
+			    $messages = [
+				    [
+				       "type"=>"text", 
+				       "text"=>"เบอร์ของตี๋ คือ 0968986451"
+				    ],
+				    [
+				       "type"=>"text", 
+				       "text"=>"ยินดีให้บริการครับ"
+				    ]
+			    ];				    
 			    }else{
 		            $messages = [
 				    "type"=>"text", 
 				    "text"=>"ยังไม่มีเบอร์ครับ จุ้บๆ"
 			    ];
 			    }
-			}else if(strpos($text, 'คนใช้')!== false){
-			     if(strpos($text, 'เงียบ')!== false){
-				 $messages = [
-					 [
-			                    'type' => 'text',
-			                    'text' => 'คนใช้เงียบแล้วค้าบ'
-				         ]
-			         ];  
-			     }
-				
-			}else if(strpos($text, 'ทดสอบ') !== false){
-			   $messages = [
-			    	[
-				    'type' => 'text',
-			    	    'text' => 'สวัสดีครับ เจ้านาย'.$Display_Name
-				],
-				[
-				    'type' => 'text',
-				    'text' => 'ตอนนี้ ค่า status มีค่า'.$status
-				]
-			    ];  
 			}else{
-			    $messages = [
-				[
-			    	'type' => 'text',
-			    	'text' => 'คำพูดนี้ยังไม่ได้เรียนรู้ครับ'
-				]
-			    ];  
+			   
 			}
 		      
 
