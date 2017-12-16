@@ -285,14 +285,14 @@ if (!is_null($events['events'])) {
 			    $messages = [
 				    [
 				       "type"=>"text", 
-				       "text"=>"เบอร์ของณัฐพงศ์ คือ 0929165763"
+				       "text"=>"เบอร์ของแพร คือ 0929165763"
 				    ],
 				    [
 				       "type"=>"text", 
 				       "text"=>"ยินดีให้บริการครับ"
 				    ]
 			    ];				    
-			    }else if(strpos($text, 'แพรวสุ') !== false || strpos($text, 'สุภิตา') !== false){
+			    }else if(strpos($text, 'แพรวสุ') !== false || strpos($text, 'สุภิตา') !== false || strpos($text, 'สุ') !== false){
 			    $messages = [
 				    [
 				       "type"=>"text", 
