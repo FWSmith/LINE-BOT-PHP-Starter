@@ -19,8 +19,19 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
                         
 			// Build message to reply back
-
-
+			$server = 'us-cdbr-iron-east-05.cleardb.net';
+			$username = 'b809e2f36f0522';
+			$password = '01a9a1f5';
+			$db = 'heroku_a0500905d74bead';
+			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
+			$Select_Status = "SELECT * FROM bot_status";
+			$Query_Status = $pdo->prepare($Select_Status);
+			$Query_Status->execute();
+			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
+			
+			if($Fetch_Status == 'false'){
+				
+			}else{
 			if(strpos($text, 'สวัสดี') !== false || strpos($text, 'คนใช้') !== false){
 			  if($groupId != '' && $userId != ''){
 		           $headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -396,8 +407,10 @@ if (!is_null($events['events'])) {
 				    "text"=>"คนใช้ไม่ได้เรียนรู้คำนี้ครับ"
 				    ]
 			    ];
-			    }
-			}	
+			}					
+			}
+
+
 			
 			
 			
