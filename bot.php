@@ -45,12 +45,16 @@ if (!is_null($events['events'])) {
 				    'text' => 'มีอะไรให้รับใช้ครับ'
 				]
 			    ];  	 
-		           }else if(strpos($Name, 'KAN') !== false){
-			     $Display_Name = 'กัน';
+		           }else if(strpos($Name, 'MΔÏ') !== false){
+			     $Display_Name = 'เมียพี่โฟร์ท';
 			     $messages = [
 				     [
 			    		'type' => 'text',
-			    		'text' => 'สวัสดีครับ พี่'.$Display_Name.' มีอะไรให้รับใช้ครับ'
+			    		'text' => 'สวัสดีครับ '.$Display_Name
+				     ],
+				     [
+				    	'type' => 'text',
+				    	'text' => 'มีอะไรให้รับใช้ครับ'
 				     ]
 			     ];     
 			   }else{
