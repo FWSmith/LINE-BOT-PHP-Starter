@@ -32,8 +32,6 @@ if (!is_null($events['events'])) {
 			if($Fetch_Status['bot_status'] == 'true'){
 				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
 				$Query_Train = $pdo->prepare($Select_Train);
-				$Query_Train->execute();
-				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
 						$headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -71,7 +69,8 @@ if (!is_null($events['events'])) {
 			           			]
 			           		];
 			           	}
-					}else if($Fetch_Train){
+					}else if($Query_Train->execute()){
+						$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 						$messages = [
 			           			[
 			           				'type' => 'text',
@@ -411,6 +410,20 @@ if (!is_null($events['events'])) {
 			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
 			           			]
 			           	];
+					}else if(strpos($text, "Jake เงียบ") !== false || strpos($text, "Jakeเงียบ") !== false || strpos($text, "Jake หุบ") !== false || strpos($text, "Jake หยุด") !== false){
+						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
+						$Query_Update = $pdo->prepare($Update_Status);
+						$Query_Update->execute();
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'กำลังทำการปิดตัวเอง'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
+			           			]
+			           	];
 					}else if(strpos($text, 'train') !== false){
 						$train = explode(":", $text);
 						$Insert_train = "INSERT INTO bot_brain (idbot_brain, textbot_brain, replybot_brain, trainer_id) VALUES (:idbot_brain, :textbot_brain, :replybot_brain, :trainer_id); ";
@@ -501,6 +514,20 @@ if (!is_null($events['events'])) {
 	           				'text' => 'Jake กลับมาแล้วครับ'
 	        			]
 			        ];
+				}else if(strpos($text, "Jake พูดได้") !== false || strpos($text, "Jakeพูดได้") !== false){
+					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE idbot_status = 1";
+					$Query_Update = $pdo->prepare($Update_Status);
+					$Query_Update->execute();
+					$messages = [
+	           			[
+	           				'type' => 'text',
+	           				'text' => 'กำลังเปิดระบบ...'
+	           			],
+	           			[
+	           				'type' => 'text',
+	           				'text' => 'Jake กลับมาแล้วครับ'
+	        			]
+			        ];
 				}
 			}
 
@@ -526,5 +553,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKK";
+echo "OK";
 ?>
