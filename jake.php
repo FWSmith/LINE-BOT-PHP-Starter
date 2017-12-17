@@ -46,6 +46,33 @@ if (!is_null($events['events'])) {
 		           		];
 		           	}
 				}
+			}else{
+				if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
+					if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
+		           		$Display_Name = "โฟร์ท";
+		           		$messages = [
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'สวัสดีครับ'.$Display_Name
+		           			],
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'มีอะไรให้รับใช้ครับ'
+		           			]
+		           		];
+		           	}else{
+		           		$messages = [
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'สวัสดีครับ'
+		           			],
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'มีอะไรให้รับใช้ครับ'
+		           			]
+		           		];
+		           	}
+				}
 			}
 			
 
