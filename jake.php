@@ -30,7 +30,12 @@ if (!is_null($events['events'])) {
 			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 			
 			if($Fetch_Status['bot_status'] == 'true'){
-
+				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain = :text_message";
+				$Query_Train = $pdo->prepare($Select_Train);
+				$Query_Train->execute(Array(
+					":text_message" => $text
+				));
+				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
 						$headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -56,6 +61,13 @@ if (!is_null($events['events'])) {
 			           			]
 			           		];
 			           	}
+					}else if($Fetch_Train){
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => $Fetch_Train['replybot_brain']
+			           			]
+			           	];
 					}else if($text == 'Shutdown Jake'){
 						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
 						$Query_Update = $pdo->prepare($Update_Status);
