@@ -30,11 +30,9 @@ if (!is_null($events['events'])) {
 			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 			
 			if($Fetch_Status['bot_status'] == 'true'){
-				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain = :text_message";
+				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
 				$Query_Train = $pdo->prepare($Select_Train);
-				$Query_Train->execute(Array(
-					":text_message" => $text
-				));
+				$Query_Train->execute();
 				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
@@ -50,6 +48,18 @@ if (!is_null($events['events'])) {
 			           	$Name = $result_decode->displayName;
 			           	if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
 			           		$Display_Name = "โฟร์ท";
+			           		$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับ'.$Display_Name
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'มีอะไรให้รับใช้ครับ'
+			           			]
+			           		];
+			           	}else if($Name == 'MΔÏ'){
+			           		$Display_Name = "ใหม่";
 			           		$messages = [
 			           			[
 			           				'type' => 'text',
@@ -197,5 +207,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OKK";
 ?>
