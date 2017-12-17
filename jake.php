@@ -24,87 +24,93 @@ if (!is_null($events['events'])) {
 			$password = '01a9a1f5';
 			$db = 'heroku_a0500905d74bead';
 			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
-			if($groupId != '' && $userId != ''){
-				if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
-					$headers_gp = array('Authorization: Bearer ' . $access_token);
-		           	$url_gp = 'https://api.line.me/v2/bot/group/'.$groupId.'/member/'.$userId.'';
-                    $ch_gp = curl_init($url_gp);
-                    curl_setopt($ch_gp, CURLOPT_RETURNTRANSFER, true);
-     	            curl_setopt($ch_gp, CURLOPT_HTTPHEADER, $headers_gp);
-                    curl_setopt($ch_gp, CURLOPT_FOLLOWLOCATION, 1);
-                    $result_gp = curl_exec($ch_gp);
-		           	$result_decode = json_decode($result_gp);
-                    curl_close($ch_gp);
-		           	$Name = $result_decode->displayName;
-		           	if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
-		           		$Display_Name = "โฟร์ท";
-		           		$messages = [
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'สวัสดีครับ'.$Display_Name
-		           			],
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'มีอะไรให้รับใช้ครับ'
-		           			]
-		           		];
-		           	}
-				}else if($text == 'Shutdown Jake'){
-					$Select_Status = "SELECT * FROM bot_status";
-					$Query_Status = $pdo->prepare($Select_Status);
-					$Query_Status->execute();
-					$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
-					$messages = [
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'กำลังทำการปิดตัวเอง'
-		           			],
-		           			[
-		           				'type' => 'text',
-		           				'text' => $Fetch_Status['bot_status']
-		           			]
-		           	];
-				}else{
-					$messages = [
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'ผมยังไม่เคยเรียนรู้คำนี้'
-		           			],
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'คุณช่วยสอนหน่อยนะครับ'
-		           			]
-		           	];
-				}
-			}else{
-				if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
-					if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
-		           		$Display_Name = "โฟร์ท";
-		           		$messages = [
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'สวัสดีครับ'.$Display_Name
-		           			],
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'มีอะไรให้รับใช้ครับ'
-		           			]
-		           		];
-		           	}else{
-		           		$messages = [
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'สวัสดีครับ'
-		           			],
-		           			[
-		           				'type' => 'text',
-		           				'text' => 'มีอะไรให้รับใช้ครับ'
-		           			]
-		           		];
-		           	}
-				}
-			}
+			$Select_Status = "SELECT * FROM bot_status";
+			$Query_Status = $pdo->prepare($Select_Status);
+			$Query_Status->execute();
+			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 			
+			if($Fetch_Status['bot_status'] == 'true'){
+
+				if($groupId != '' && $userId != ''){
+					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
+						$headers_gp = array('Authorization: Bearer ' . $access_token);
+			           	$url_gp = 'https://api.line.me/v2/bot/group/'.$groupId.'/member/'.$userId.'';
+	                    $ch_gp = curl_init($url_gp);
+	                    curl_setopt($ch_gp, CURLOPT_RETURNTRANSFER, true);
+	     	            curl_setopt($ch_gp, CURLOPT_HTTPHEADER, $headers_gp);
+	                    curl_setopt($ch_gp, CURLOPT_FOLLOWLOCATION, 1);
+	                    $result_gp = curl_exec($ch_gp);
+			           	$result_decode = json_decode($result_gp);
+	                    curl_close($ch_gp);
+			           	$Name = $result_decode->displayName;
+			           	if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
+			           		$Display_Name = "โฟร์ท";
+			           		$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับ'.$Display_Name
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'มีอะไรให้รับใช้ครับ'
+			           			]
+			           		];
+			           	}
+					}else if($text == 'Shutdown Jake'){
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'กำลังทำการปิดตัวเอง'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => $Fetch_Status['bot_status']
+			           			]
+			           	];
+					}else{
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'ผมยังไม่เคยเรียนรู้คำนี้'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'คุณช่วยสอนหน่อยนะครับ'
+			           			]
+			           	];
+					}
+				}else{
+					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
+						if($userId == 'U72c641a79b2f1a785a7b362df99931ae'){
+			           		$Display_Name = "โฟร์ท";
+			           		$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับ'.$Display_Name
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'มีอะไรให้รับใช้ครับ'
+			           			]
+			           		];
+			           	}else{
+			           		$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับ'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'มีอะไรให้รับใช้ครับ'
+			           			]
+			           		];
+			           	}
+					}
+				}
+
+			}else{
+
+			}
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -128,5 +134,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OKS";
 ?>
