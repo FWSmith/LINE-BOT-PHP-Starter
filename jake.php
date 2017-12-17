@@ -537,7 +537,7 @@ if (!is_null($events['events'])) {
 	           				'text' => 'Jake กลับมาแล้วครับ'
 	        			]
 			        ];
-				}else if(strpos($text, "Jake พูดได้") !== false || strpos($text, "Jakeพูดได้") !== false){
+				}else if(strpos($text, "Jake พูด") !== false || strpos($text, "Jakeพูด") !== false){
 					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE idbot_status = 1";
 					$Query_Update = $pdo->prepare($Update_Status);
 					$Query_Update->execute();
