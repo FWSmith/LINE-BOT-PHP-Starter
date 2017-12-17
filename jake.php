@@ -72,12 +72,12 @@ if (!is_null($events['events'])) {
 			           	];
 					}else if(strpos($text, 'train') !== false){
 						$train = explode(":", $text);
-						$Insert_train = "INSERT INTO bot_words (idbot_words, textbot_words, replybot_words, trainer_id) VALUES (:idbot_words, :textbot_words, :replybot_words, :trainer_id); ";
+						$Insert_train = "INSERT INTO bot_brain (idbot_brain, textbot_brain, replybot_brain, trainer_id) VALUES (:idbot_brain, :textbot_brain, :replybot_brain, :trainer_id); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
 						$Query_Insert->execute(Array(
-							":idbot_words" => NULL,
-							":textbot_words" => $train[1],
-							":replybot_words" => $train[2],
+							":idbot_brain" => NULL,
+							":textbot_brain" => $train[1],
+							":replybot_brain" => $train[2],
 							":trainer_id" => $userId
 						));
 						$messages = [
@@ -185,5 +185,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "O1K1D";
+echo "O1K11D";
 ?>
