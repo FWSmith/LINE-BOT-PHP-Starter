@@ -460,15 +460,21 @@ if (!is_null($events['events'])) {
 			           			]
 			           	];
 					}else{
-						
+						$numbers = range(1, 3);
+						shuffle($numbers);
+						foreach ($numbers as $number) {
+						    if($number == 1){
+						    	$reply = "จริงหรอจ้ะ";
+						    }else if($number == 2){
+						    	$reply = "ใช่หรอ";
+						    }else if($number == 3){
+						    	$reply = "ไม่รู้";
+						    }
+						}
 						$messages = [
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'ผมยังไม่เคยเรียนรู้คำนี้'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'คุณช่วยสอนหน่อยนะครับ'
+			           				'text' => $reply
 			           			]
 			           	];
 					}
@@ -555,5 +561,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OKK";
 ?>
