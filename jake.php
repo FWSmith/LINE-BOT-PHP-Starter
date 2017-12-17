@@ -72,13 +72,13 @@ if (!is_null($events['events'])) {
 			           	];
 					}else if(strpos($text, 'train') !== false){
 						$train = explode(":", $text);
-						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer); ";
+						$Insert_train = "INSERT INTO bot_words (idbot_words, textbot_words, replybot_words, trainer_id) VALUES (:idbot_train, :textbot_words, :replybot_words, :trainer_id); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
 						$Query_Insert->execute(Array(
-							":idbot_train" => NULL,
-							":textbot_train" => $train[1],
-							":replybot_train" => $train[2],
-							":trainer" => $userId
+							":idbot_words" => NULL,
+							":textbot_words" => $train[1],
+							":replybot_words" => $train[2],
+							":trainer_id" => $userId
 						));
 						$messages = [
 			           			[
@@ -92,11 +92,11 @@ if (!is_null($events['events'])) {
 			           	];
 					}else if(strpos($text, 'delete') !== false){
 						$delete_text = explode(":", $text);
-						$Delete_train = "DELETE FROM `bot_train` WHERE `textbot_train` = :textbot_train AND `trainer` = :trainer";
+						$Delete_train = "DELETE FROM `bot_words` WHERE `textbot_words` = :textbot_words AND `trainer_id` = :trainer_id";
 						$Query_Delete = $pdo->prepare($Delete_train);
 						$Query_Delete->execute(Array(
-							":textbot_train" => $delete_text[1],
-							":trainer" => $userId
+							":textbot_words" => $delete_text[1],
+							":trainer_id" => $userId
 						));
 						$messages = [
 			           			[
@@ -185,5 +185,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "OK1D";
 ?>
