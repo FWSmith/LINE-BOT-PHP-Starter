@@ -86,7 +86,7 @@ if (!is_null($events['events'])) {
 					    $output=curl_exec($temp);
 					    curl_close($temp);
 					    $temp_result = json_decode($output);
-					    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)x5/9;
+					    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
 					    $messages = [
 					    	[
 					    		'type' => 'text',
