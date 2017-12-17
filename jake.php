@@ -67,7 +67,27 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => $Fetch_Status['bot_status']
+			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
+			           			]
+			           	];
+					}else if(strpos($text, 'train')){
+						$train = explode(":", $text);
+						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer); ";
+						$Query_Insert = $pdo->prepare($Insert_train);
+						$Query_Insert->execute(Array(
+							":idbot_train" => NULL,
+							":textbot_train" => $train[1],
+							":replybot_train" => $train[2],
+							":trainer" => $userId
+						));
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'เรียนรู้คำนี้แล้วครับ'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'ขอบคุณที่สอนนะครับ'
 			           			]
 			           	];
 					}else{
@@ -151,5 +171,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OKT";
 ?>
