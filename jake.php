@@ -32,6 +32,8 @@ if (!is_null($events['events'])) {
 			if($Fetch_Status['bot_status'] == 'true'){
 				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
 				$Query_Train = $pdo->prepare($Select_Train);
+				$Query_Train->execute();
+				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
 						$headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -69,8 +71,7 @@ if (!is_null($events['events'])) {
 			           			]
 			           		];
 			           	}
-					}else if($Query_Train->execute()){
-						$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
+					}else if($Fetch_Train){
 						$messages = [
 			           			[
 			           				'type' => 'text',
@@ -553,5 +554,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OKK";
 ?>
