@@ -78,6 +78,20 @@ if (!is_null($events['events'])) {
 			           				'text' => $Fetch_Train['replybot_brain']
 			           			]
 			           	];
+					}else if(strpos($text, 'อุณหภูมิ') !== false){
+						$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225448";
+					    $temp = curl_init();  
+					    curl_setopt($temp,CURLOPT_URL,$temp_url);
+					    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+					    $output=curl_exec($temp);
+					    curl_close($temp);
+					    $temp_result = json_decode($output);
+					    $messages = [
+					    	[
+					    		'type': 'text',
+					    		'text': 'ขณะนี้อุณหภูมิอยู่ที่ : '.$temp_result->query->results->channel->item->condition->temp;
+					    	]
+					    ]
 					}else if($text == 'Shutdown Jake'){
 						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
 						$Query_Update = $pdo->prepare($Update_Status);
