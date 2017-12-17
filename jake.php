@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
 						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
 						$Query_Insert->execute(Array(
-							":idbot_train" => 1,
+							":idbot_train" => NULL,
 							":textbot_train" => $train[1],
 							":replybot_train" => $train[2],
 							":trainer" => $userId
@@ -171,5 +171,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKTT";
+echo "OK";
 ?>
