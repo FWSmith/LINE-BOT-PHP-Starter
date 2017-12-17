@@ -86,10 +86,11 @@ if (!is_null($events['events'])) {
 					    $output=curl_exec($temp);
 					    curl_close($temp);
 					    $temp_result = json_decode($output);
+					    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)x5/9;
 					    $messages = [
 					    	[
 					    		'type' => 'text',
-					    		'text' => 'ขณะนี้อุณหภูมิอยู่ที่ : '.$temp_result->query->results->channel->item->condition->temp
+					    		'text' => 'ขณะนี้อุณหภูมิอยู่ที่ : '.$Cel.' องศาเซลเซียส'
 					    	]
 					    ];
 					}else if($text == 'Shutdown Jake'){
