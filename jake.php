@@ -459,6 +459,21 @@ if (!is_null($events['events'])) {
 			           				'text' => 'ลบการสอนแล้วครับ'
 			           			]
 			           	];
+					}else if(strpos($text, "แนะนำตัว") !== false){
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับผมชื่อ Jake'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'วิธีสอนให้ Jake พูด'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'train:คำพูดที่ส่ง:คำพูดที่ตอบ'
+			           			]
+			           	];
 					}else{
 						$numbers = range(1, 3);
 						shuffle($numbers);
