@@ -57,6 +57,9 @@ if (!is_null($events['events'])) {
 			           		];
 			           	}
 					}else if($text == 'Shutdown Jake'){
+						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
+						$Query_Update = $pdo->prepare($Update_Status);
+						$Query_Update->execute();
 						$messages = [
 			           			[
 			           				'type' => 'text',
@@ -109,7 +112,21 @@ if (!is_null($events['events'])) {
 				}
 
 			}else{
-
+				if($text == 'Start Jake'){
+					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE idbot_status = 1";
+					$Query_Update = $pdo->prepare($Update_Status);
+					$Query_Update->execute();
+					$messages = [
+	           			[
+	           				'type' => 'text',
+	           				'text' => 'กำลังเปิดระบบ...'
+	           			],
+	           			[
+	           				'type' => 'text',
+	           				'text' => 'Jake กลับมาแล้วครับ'
+	        			]
+			        ];
+				}
 			}
 
 			// Make a POST Request to Messaging API to reply to sender
@@ -134,5 +151,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKS";
+echo "OK";
 ?>
