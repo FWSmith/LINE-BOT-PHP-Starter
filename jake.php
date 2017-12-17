@@ -479,22 +479,22 @@ if (!is_null($events['events'])) {
 			           			[
 								  "type"=> "template",
 								  "altText"=> "this is a confirm template",
-								  "template" => {
+								  "template" => [
 								      "type" => "confirm",
 								      "text" => "Are you sure?",
 								      "actions" => [
-								          {
+								          [
 								            "type" => "message",
 								            "label" => "Yes",
 								            "text" => "yes"
-								          },
-								          {
+								          ],
+								          [
 								            "type" => "message",
 								            "label" => "No",
 								            "text" => "no"
-								          }
+								          ]
 								      ]
-								  }
+								  	]
 								]
 			           	];
 					}else{
