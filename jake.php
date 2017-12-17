@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 					    		'type': 'text',
 					    		'text': 'ขณะนี้อุณหภูมิอยู่ที่ : '.$temp_result->query->results->channel->item->condition->temp
 					    	]
-					    ]
+					    ];
 					}else if($text == 'Shutdown Jake'){
 						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
 						$Query_Update = $pdo->prepare($Update_Status);
