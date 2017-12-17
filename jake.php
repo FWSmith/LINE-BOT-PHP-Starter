@@ -90,7 +90,7 @@ if (!is_null($events['events'])) {
 					    $messages = [
 					    	[
 					    		'type' => 'text',
-					    		'text' => 'ขณะนี้อุณหภูมิอยู่ที่ : '.$Cel.' องศาเซลเซียส'
+					    		'text' => 'ขณะนี้อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศาเซลเซียส'
 					    	]
 					    ];
 					}else if($text == 'Shutdown Jake'){
