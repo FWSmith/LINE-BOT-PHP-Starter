@@ -464,17 +464,17 @@ if (!is_null($events['events'])) {
 						shuffle($numbers);
 						foreach ($numbers as $number) {
 						    if($number == 1){
-						    	$text = "จริงหรอจ้ะ";
+						    	$reply = "จริงหรอจ้ะ";
 						    }else if($number == 2){
-						    	$text = "ใช่หรอ";
+						    	$reply = "ใช่หรอ";
 						    }else if($number == 3){
-						    	$text = "ไม่รู้";
+						    	$reply = "ไม่รู้";
 						    }
 						}
 						$messages = [
 			           			[
 			           				'type' => 'text',
-			           				'text' => $text
+			           				'text' => $reply
 			           			]
 			           	];
 					}
