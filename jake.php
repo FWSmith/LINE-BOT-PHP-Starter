@@ -90,6 +90,20 @@ if (!is_null($events['events'])) {
 			           				'text' => 'ขอบคุณที่สอนนะครับ'
 			           			]
 			           	];
+					}else if(strpos($text, 'delete') !== false){
+						$delete_text = explode(":", $text);
+						$Delete_train = "DELETE FROM `bot_train` WHERE `textbot_train` = :textbot_train AND `trainer` = :trainer";
+						$Query_Delete = $pdo->prepare($Delete_train);
+						$Query_Delete->execute(Array(
+							":textbot_train" => $delete_text[1],
+							":trainer" => $userId
+						));
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'ลบการสอนแล้วครับ'
+			           			]
+			           	];
 					}else{
 						$messages = [
 			           			[
@@ -171,5 +185,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OK1";
 ?>
