@@ -70,7 +70,7 @@ if (!is_null($events['events'])) {
 			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
 			           			]
 			           	];
-					}else if(strpos($text, 'train')){
+					}else if(strpos($text, 'train') !== false){
 						$train = explode(":", $text);
 						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
