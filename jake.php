@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 		           			]
 		           		];
 		           	}
-				}else if($text == 'jakeShutdown'){
+				}else if($text == 'Shutdown Jake'){
 					$messages = [
 		           			[
 		           				'type' => 'text',
@@ -120,5 +120,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OK2";
 ?>
