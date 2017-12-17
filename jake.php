@@ -92,10 +92,10 @@ if (!is_null($events['events'])) {
 			           	];
 					}else if(strpos($text, 'delete') !== false){
 						$delete_text = explode(":", $text);
-						$Delete_train = "DELETE FROM `bot_words` WHERE `textbot_words` = :textbot_words AND `trainer_id` = :trainer_id";
+						$Delete_train = "DELETE FROM `bot_brain` WHERE `textbot_brain` = :textbot_brain AND `trainer_id` = :trainer_id";
 						$Query_Delete = $pdo->prepare($Delete_train);
 						$Query_Delete->execute(Array(
-							":textbot_words" => $delete_text[1],
+							":textbot_brain" => $delete_text[1],
 							":trainer_id" => $userId
 						));
 						$messages = [
@@ -185,5 +185,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "O1K11D";
+echo "OK";
 ?>
