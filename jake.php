@@ -50,6 +50,10 @@ if (!is_null($events['events'])) {
 		           		];
 		           	}
 				}else if($text == 'Shutdown Jake'){
+					$Select_Status = "SELECT * FROM bot_status";
+					$Query_Status = $pdo->prepare($Select_Status);
+					$Query_Status->execute();
+					$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 					$messages = [
 		           			[
 		           				'type' => 'text',
@@ -57,7 +61,7 @@ if (!is_null($events['events'])) {
 		           			],
 		           			[
 		           				'type' => 'text',
-		           				'text' => 'บ้ายบายครับ'
+		           				'text' => $Fetch_Status['bot_status']
 		           			]
 		           	];
 				}else{
@@ -124,5 +128,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK2";
+echo "OK";
 ?>
