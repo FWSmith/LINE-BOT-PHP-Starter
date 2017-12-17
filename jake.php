@@ -89,7 +89,7 @@ if (!is_null($events['events'])) {
 					    $messages = [
 					    	[
 					    		'type': 'text',
-					    		'text': 'ขณะนี้อุณหภูมิอยู่ที่ : '.$temp_result->query->results->channel->item->condition->temp;
+					    		'text': 'ขณะนี้อุณหภูมิอยู่ที่ : '.$temp_result->query->results->channel->item->condition->temp
 					    	]
 					    ]
 					}else if($text == 'Shutdown Jake'){
