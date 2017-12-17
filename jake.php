@@ -19,7 +19,11 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
                         
 			// Build message to reply back
-
+			$server = 'us-cdbr-iron-east-05.cleardb.net';
+			$username = 'b809e2f36f0522';
+			$password = '01a9a1f5';
+			$db = 'heroku_a0500905d74bead';
+			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
 			if($groupId != '' && $userId != ''){
 				if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
 					$headers_gp = array('Authorization: Bearer ' . $access_token);
