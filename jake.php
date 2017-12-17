@@ -45,6 +45,28 @@ if (!is_null($events['events'])) {
 		           			]
 		           		];
 		           	}
+				}else if($text == 'jakeShutdown'){
+					$messages = [
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'กำลังทำการปิดตัวเอง'
+		           			],
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'บ้ายบายครับ'
+		           			]
+		           	];
+				}else{
+					$messages = [
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'ผมยังไม่เคยเรียนรู้คำนี้'
+		           			],
+		           			[
+		           				'type' => 'text',
+		           				'text' => 'คุณช่วยสอนหน่อยนะครับ'
+		           			]
+		           	];
 				}
 			}else{
 				if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
