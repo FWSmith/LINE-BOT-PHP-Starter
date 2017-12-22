@@ -98,7 +98,7 @@ if (!is_null($events['events'])) {
 			    $messages = [
 				    [
 				       "type"=>"text", 
-				       "text"=>"เบอร์ของแกมไทย คือ 0868692992"
+				       "text"=>"เบอร์ของแกมไทย คือ "
 				    ],
 				    [
 				       "type"=>"text", 
