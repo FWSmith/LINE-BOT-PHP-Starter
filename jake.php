@@ -33,9 +33,11 @@ if (!is_null($events['events'])) {
 			if($rowCount >= 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 							if($Fetch_Status['bot_status'] == 'true'){
-				$Select_Train = "SELECT * FROM bot_train WHERE textbot_train LIKE '%{$text}%' AND group_id = '$groupId'";
+				$Select_Train = "SELECT * FROM bot_train WHERE textbot_train LIKE '%{$text}%' AND group_id = :group_id";
 				$Query_Train = $pdo->prepare($Select_Train);
-				$Query_Train->execute();
+				$Query_Train->execute(Array(
+					":group_id" => $groupId
+				));
 				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
