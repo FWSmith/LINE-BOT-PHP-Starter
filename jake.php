@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 				":groupId" => $groupId
 			));
 			$rowCount = $Query_Status->rowCount();
-			if($rowCount == 1){
+			if($rowCount >= 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 							if($Fetch_Status['bot_status'] == 'true'){
 				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
@@ -606,18 +606,18 @@ if (!is_null($events['events'])) {
 				}
 			}
 			}else{
-				$delete_status = "DELETE FROM `bot_speak` WHERE `bot_groupid` = :id";
-				$query_delete = $pdo->prepare($delete_status);
-				$query_delete->execute(Array(
-					":id" => $groupId
-				));
-				// $Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
-				// $Query_Insert = $pdo->prepare($Insert_Status);
-				// $Query_Insert->execute(Array(
-				// 	":ID" => NULL,
-				// 	":bot_status" => $status,
-				// 	":bot_groupid" => $groupId
+				// $delete_status = "DELETE FROM `bot_speak` WHERE `bot_groupid` = :id";
+				// $query_delete = $pdo->prepare($delete_status);
+				// $query_delete->execute(Array(
+				// 	":id" => $groupId
 				// ));
+				$Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
+				$Query_Insert = $pdo->prepare($Insert_Status);
+				$Query_Insert->execute(Array(
+					":ID" => NULL,
+					":bot_status" => $status,
+					":bot_groupid" => $groupId
+				));
 			}
 
 
@@ -643,5 +643,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "O1K1";
+echo "OK";
 ?>
