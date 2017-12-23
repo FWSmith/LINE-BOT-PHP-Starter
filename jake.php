@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 					":group_id" => $groupId
 				));
 				while ($Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC)) {
-					$reply = $Fetch_Train['replybot_train'];
+					$reply = $Fetch_Train['replybot_train'][0];
 				}
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
