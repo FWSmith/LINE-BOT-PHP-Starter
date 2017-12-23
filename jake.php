@@ -39,8 +39,13 @@ if (!is_null($events['events'])) {
 					":text_bot" => $text,
 					":group_id" => $groupId
 				));
-				while ($Fetch_Train[] = $Query_Train->fetch(PDO::FETCH_ASSOC)) {
-					$reply = $Fetch_Train[0]['replybot_train'];
+				$Count_Train = $Query_Train->rowCount();
+				$i = 0;
+				$nums = range($i, $Count_Train);
+				shuffle($nums);
+				foreach ($nums as $num) {
+				   $Fetch_Train[] = $Query_Train->fetch(PDO::FETCH_ASSOC);
+				   $reply = $Fetch_Train[0]['replybot_train'];
 				}
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
@@ -650,5 +655,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "2OK";
 ?>
