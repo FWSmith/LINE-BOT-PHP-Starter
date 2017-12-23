@@ -1065,89 +1065,40 @@ if (!is_null($events['events'])) {
 						];		
 					}
 
-					}else if(strpos($text, "ดูดวง") !== false){
+					}else if(strpos($text, 'ราคาทองวันนี้') !== false){
+						$url = "https://www.goldtraders.or.th/";
+						$ch = curl_init($url);
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+						curl_setopt($ch, CURLOPT_VERBOSE, 1);
+						curl_setopt($ch, CURLOPT_HEADER, 1);
+						// ...
+
+						$response = curl_exec($ch);
+
+						// Then, after your curl_exec call:
+						$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+						$header = substr($response, 0, $header_size);
+						$body = substr($response, $header_size);
+						$explode = explode(" ", $body);
 						$messages = [
-							[
-								  "type" => "template",
-								  "altText" => "this is a carousel template",
-								  "template" => [
-								      "type" => "carousel",
-								      "columns" => [
-								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/magic1.png",
-								            "imageBackgroundColor" => "#FFFFFF",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือกวันเกิดของคุณ",
-								            "actions" => [
-								                [
-								                    "type" => "message",
-								                    "label" => "วันจันทร์",
-								                    "text" => "วันจันทร์"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "วันอังคาร",
-								                    "text" => "วันอังคาร"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "วันพุธ",
-								                    "text" => "วันพุธ"
-								                ]
-								            ]
-								          ],
-								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/magic2.jpg",
-								            "imageBackgroundColor" => "#000000",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือกวันเกิดของคุณ",
-								            "actions" => [
-								                [
-								                    "type" => "message",
-								                    "label" => "วันพฤหัสบดี",
-								                    "text" => "วันพฤหัสบดี"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "วันศุกร์",
-								                    "text" => "วันศุกร์"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "วันเสาร์",
-								                    "text" => "วันเสาร์"
-								                ]
-								            ]
-								          ],
-								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/magic4.png",
-								            "imageBackgroundColor" => "#000000",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือกวันเกิดของคุณ",
-								            "actions" => [
-								                [
-								                    "type" => "message",
-								                    "label" => "วันอาทิตย์",
-								                    "text" => "วันอาทิตย์"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "-",
-								                    "text" => "-"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "-",
-								                    "text" => "-"
-								                ]
-								            ]
-								          ]
-								      ],
-								      "imageAspectRatio" => "rectangle",
-								      "imageSize" => "cover"
-								  ]
-							]
-						];	
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'ราคารับซื้อทองคำแท่ง : '.str_replace('size="6">', "", $explode[1425]).' บาท'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'ราคาขายออกทองคำแท่ง : '.str_replace('size="6">', "", $explode[1481]).' บาท'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'ราคารับซื้อทองรูปพรรณ : '.str_replace('size="6">', "", $explode[1615]).' บาท'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'ราคาขายออกทองรูปพรรณ : '.str_replace('size="6">', "", $explode[1671]).' บาท'
+							    	]
+							    ];
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
@@ -1197,8 +1148,8 @@ if (!is_null($events['events'])) {
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "ดูดวงรายวัน",
-								                    "text" => "ดูดวงรายวัน"
+								                    "label" => "ราคาทองวันนี้",
+								                    "text" => "ราคาทองวันนี้"
 								                ]
 								            ]
 								          ]
