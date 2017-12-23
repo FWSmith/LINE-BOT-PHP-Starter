@@ -658,11 +658,7 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'วิธีสอนให้ Jake พูด (train:คำพูดที่ส่ง:คำพูดที่ตอบ)'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'วิธีทำให้ Jake ลืม (delete:คำพูดที่ส่ง)'
+			           				'text' => 'ผมสามารถเรียนรู้คำได้จากคุณ, จดจำเบอร์มือถือ และ รายงานสภาพอากาศได้ด้วย'
 			           			]
 			           	];
 					}else if(strpos($text, "template") !== false){
@@ -691,36 +687,59 @@ if (!is_null($events['events'])) {
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
-							  "type" => "template",
-							  "altText" => "this is a buttons template",
-							  "template" => [
-							      "type" => "buttons",
-							      "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
-							      "imageAspectRatio" => "rectangle",
-							      "imageSize" => "cover",
-							      "imageBackgroundColor" => "#FFFFFF",
-							      "title" => "ตัวเลือก",
-							      "text" => "กรุณาเลือก",
-							      "actions" => [
-							          [
-							            "type" => "message",
-							            "label" => "Jake คืออะไร",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "สภาพอากาศของวันนี้",
-							            "text" => "รายงานสภาพอากาศวันนี้"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "จำนวนเบอร์เพื่อนๆ",
-							            "text" => "เบอร์เพื่อนทั้งหมด"
-							          ]
-							      ]
-							  ]
+								  "type" => "template",
+								  "altText" => "this is a carousel template",
+								  "template" => [
+								      "type" => "carousel",
+								      "columns" => [
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+										            "type" => "message",
+										            "label" => "Jake คืออะไร",
+										            "text" => "นายเป็นใคร"
+										          ],
+										          [
+										            "type" => "message",
+										            "label" => "สอนให้ Jake พูดยังไง",
+										            "text" => "วิธีสอน Jake"
+										          ],
+										          [
+										            "type" => "message",
+										            "label" => "สภาพอากาศของวันนี้",
+										            "text" => "รายงานสภาพอากาศวันนี้"
+										          ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake2.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+										            "type" => "message",
+										            "label" => "จำนวนเบอร์เพื่อนๆ",
+										            "text" => "เบอร์เพื่อนทั้งหมด"
+										        ],
+										        [
+										            "type" => "message",
+										            "label" => "พยากรณ์อากาศ",
+										            "text" => "ช่วยพยากรณ์อากาศที"
+										        ]
+								            ]
+								          ]
+								      ],
+								      "imageAspectRatio" => "rectangle",
+								      "imageSize" => "cover"
+								  ]
 							]
-						];
+						];		
+
 					}else if(strpos($text, 'นายเป็นใคร') !== false){
 						$messages = [
 			           			[
@@ -733,11 +752,7 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'วิธีสอนให้ Jake พูด (train:คำพูดที่ส่ง:คำพูดที่ตอบ)'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'วิธีทำให้ Jake ลืม (delete:คำพูดที่ส่ง)'
+			           				'text' => 'ผมสามารถเรียนรู้คำได้จากคุณ, จดจำเบอร์มือถือ และ รายงานสภาพอากาศได้ด้วย'
 			           			]
 			           	];
 					}else{
