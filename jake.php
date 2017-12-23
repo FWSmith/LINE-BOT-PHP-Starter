@@ -698,7 +698,7 @@ if (!is_null($events['events'])) {
 								            "title" => "ตัวเลือก",
 								            "text" => "กรุณาเลือก",
 								            "actions" => [
-								                [
+								                  [
 										            "type" => "message",
 										            "label" => "Jake คืออะไร",
 										            "text" => "นายเป็นใคร"
@@ -716,7 +716,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/jake2.jpg",
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "ตัวเลือก",
 								            "text" => "กรุณาเลือก",
