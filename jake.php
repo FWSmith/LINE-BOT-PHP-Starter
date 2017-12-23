@@ -547,6 +547,16 @@ if (!is_null($events['events'])) {
 						$Query_Phone->execute(Array(
 							":group_id" => $groupId
 						));
+						if(strpos($text, 'ทั้งหมด') !== false){
+							while ($Fetch_Phone = $Query_Phone->fetch(PDO::FETCH_ASSOC)) {
+							    $messages = [
+								    [
+								       "type"=>"text", 
+								       "text"=>"เบอร์ของคุณ ".$Fetch_Phone['owner_botphone']." คือ ".$Fetch_Phone['num_botphone']
+								    ]
+							    ];								
+							}
+						}else{
 						while ($Fetch_Phone = $Query_Phone->fetch(PDO::FETCH_ASSOC)) {
 							if(strpos($text, $Fetch_Phone['owner_botphone']) !== false){
 						    $messages = [
@@ -560,7 +570,9 @@ if (!is_null($events['events'])) {
 							    ]
 						    ];
 							}
+						}							
 						}
+
 
 					}else if($text == 'Shutdown Jake'){
 						$Update_Status = "UPDATE bot_speak SET bot_status = 'false' WHERE bot_groupid = :group_id";
