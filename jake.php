@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 			$username = 'b809e2f36f0522';
 			$password = '01a9a1f5';
 			$db = 'heroku_a0500905d74bead';
-			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
+			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));  
 			$Select_Status = "SELECT * FROM bot_speak WHERE bot_groupid = :groupId";
 			$Query_Status = $pdo->prepare($Select_Status);
 			$Query_Status->execute(Array(
@@ -574,7 +574,7 @@ if (!is_null($events['events'])) {
 
 			}else{
 				if($text == 'Start Jake'){
-					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE bot_groupid = :group_id";
+					$Update_Status = "UPDATE bot_speak SET bot_status = 'true' WHERE bot_groupid = :group_id";
 					$Query_Update = $pdo->prepare($Update_Status);
 					$Query_Update->execute(Array(
 						":group_id" => $groupId
