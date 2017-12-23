@@ -714,6 +714,29 @@ if (!is_null($events['events'])) {
 								                    "text" => "รายงานสภาพอากาศวันนี้"
 								                ]
 								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "Jake คืออะไร",
+								                    "text" => "นายเป็นใคร"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "สอน Jake ยังไง",
+								                    "text" => "วิธีสอน Jake"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "สภาพอากาศของวันนี้",
+								                    "text" => "รายงานสภาพอากาศวันนี้"
+								                ]
+								            ]
 								          ]
 								      ],
 								      "imageAspectRatio" => "rectangle",
