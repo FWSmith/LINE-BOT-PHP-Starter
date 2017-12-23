@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
 					":text_bot" => $text,
 					":group_id" => $groupId
 				));
-				$Count_Train = $Query_Train->rowCount();
+				$Count_Train = $Query_Train->rowCount() - 1;
 				$i = 0;
 				$nums = range($i, $Count_Train);
 				shuffle($nums);
