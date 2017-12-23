@@ -149,8 +149,8 @@ if (!is_null($events['events'])) {
 								      ],
 								      "imageAspectRatio" => "rectangle",
 								      "imageSize" => "cover"
-								  }
-								}
+								  ]
+								]
 							]
 						];
 					}else if(strpos($text, 'รายงาน') !== false){
