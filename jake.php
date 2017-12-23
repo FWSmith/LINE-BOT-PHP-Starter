@@ -552,13 +552,13 @@ if (!is_null($events['events'])) {
 					}else if(strpos($text, 'นายเป็นใคร') !== false){
 						$messages = [
 			           			[
-								   "type":"message",
-								   "text":"hello",
-								   "area":[  
-								      "x":520,
-								      "y":0,
-								      "width":520,
-								      "height":1040
+								   "type" => "message",
+								   "text" => "hello",
+								   "area" => [  
+								      "x" => 520,
+								      "y" => 0,
+								      "width" => 520,
+								      "height" => 1040
 								  	]
 								]
 			           	];
