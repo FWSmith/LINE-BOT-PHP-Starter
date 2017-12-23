@@ -490,19 +490,11 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'วิธีสอนให้ Jake พูด'
+			           				'text' => 'วิธีสอนให้ Jake พูด (train:คำพูดที่ส่ง:คำพูดที่ตอบ)'
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'train:คำพูดที่ส่ง:คำพูดที่ตอบ'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'วิธีทำให้ Jake ลืม'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'delete:คำพูดที่ส่ง'
+			           				'text' => 'วิธีทำให้ Jake ลืม (delete:คำพูดที่ส่ง)'
 			           			]
 			           	];
 					}else if(strpos($text, "template") !== false){
@@ -578,19 +570,11 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'วิธีสอนให้ Jake พูด'
+			           				'text' => 'วิธีสอนให้ Jake พูด (train:คำพูดที่ส่ง:คำพูดที่ตอบ)'
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => 'train:คำพูดที่ส่ง:คำพูดที่ตอบ'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'วิธีทำให้ Jake ลืม'
-			           			],
-			           			[
-			           				'type' => 'text',
-			           				'text' => 'delete:คำพูดที่ส่ง'
+			           				'text' => 'วิธีทำให้ Jake ลืม (delete:คำพูดที่ส่ง)'
 			           			]
 			           	];
 					}else{
