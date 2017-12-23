@@ -81,7 +81,7 @@ if (!is_null($events['events'])) {
 						$messages = [
 			           			[
 			           				'type' => 'text',
-			           				'text' => $Fetch_Train['replybot_brain']
+			           				'text' => $Fetch_Train['replybot_train']
 			           			]
 			           	];
 					}else if(strpos($text, 'อุณหภูมิ') !== false){
