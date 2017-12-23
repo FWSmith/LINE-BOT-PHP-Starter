@@ -523,6 +523,24 @@ if (!is_null($events['events'])) {
 						       "text"=>"ยินดีให้บริการครับ"
 						    ]
 					    ];
+					}else if(strpos($text, 'remove:') !== false){
+						$phone = explode(":", $text);
+						$Delete_phone = "DELETE FROM `bot_phone` WHERE `owner_botphone` = :owner_botphone AND `group_id` = :group_id";
+						$Query_phone = $pdo->prepare($Delete_phone);
+						$Query_phone->execute(Array(
+							":owner_botphone" => $phone[1],
+							":group_id" => $groupId
+						));
+						$messages = [
+						    [
+						       "type"=>"text", 
+						       "text"=>"ลบเบอร์ของคุณ ".$phone[1]." แล้วครับ"
+						    ],
+						    [
+						       "type"=>"text", 
+						       "text"=>"ยินดีให้บริการครับ"
+						    ]
+					    ];
 					}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
 					    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
 					    $messages = [
