@@ -1088,19 +1088,19 @@ if (!is_null($events['events'])) {
 						$messages = [
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'รับซื้อทองแท่ง : '.str_replace('</font></b></span>', "", $a).' บาท'
+							    		'text' => 'รับซื้อทองแท่ง '.str_replace('</font></b></span>', "", $a).' B'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ขายออกทองแท่ง : '.str_replace('</font></b></span>', "", $b).' บาท'
+							    		'text' => 'ขายออกทองแท่ง '.str_replace('</font></b></span>', "", $b).' B'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'รับซื้อทองรูป : '.str_replace('</font></b></span>', "", $c).' บาท'
+							    		'text' => 'รับซื้อทองรูป '.str_replace('</font></b></span>', "", $c).' B'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ขายออกทองรูป : '.str_replace('</font></b></span>', "", $d).' บาท'
+							    		'text' => 'ขายออกทองรูป '.str_replace('</font></b></span>', "", $d).' B'
 							    	]
 							    ];
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
