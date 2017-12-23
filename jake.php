@@ -693,71 +693,43 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
-								            "title" => "กรุณาเลือกจังหวัด",
-								            "text" => "ภาคกลาง",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
 								            "actions" => [
 								                [
 								                    "type" => "message",
-								                    "label" => "กรุงเทพมหานคร",
-								                    "text" => "รายงานสภาพอากาศของกรุงเทพ"
+								                    "label" => "Jake คืออะไร",
+								                    "text" => "นายเป็นใคร"
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "นนทบุรี",
-								                    "text" => "รายงานสภาพอากาศของนนทบุรี"
+								                    "label" => "สอน Jake ยังไง",
+								                    "text" => "วิธีสอน Jake"
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "นครนายก",
-								                    "text" => "รายงานสภาพอากาศของนครนายก"
+								                    "label" => "สภาพอากาศของวันนี้",
+								                    "text" => "รายงานสภาพอากาศวันนี้"
 								                ]
 								            ]
 								          ],
 								          [
 								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
 								            "imageBackgroundColor" => "#000000",
-								            "title" => "กรุณาเลือกจังหวัด",
-								            "text" => "ภาคตะวันตก",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
 								            "actions" => [
 								                [
 								                    "type" => "message",
-								                    "label" => "กาญจนบุรี",
-								                    "text" => "รายงานสภาพอากาศของกาญจนบุรี"
+								                    "label" => "จำนวนเบอร์เพื่อนๆ",
+								                    "text" => "เบอร์เพื่อนทั้งหมด"
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "ราชบุรี",
-								                    "text" => "รายงานสภาพอากาศของราชบุรี"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "ประจวบคีรีขันธ์",
-								                    "text" => "รายงานสภาพอากาศของประจวบคีรีขันธ์"
-								                ]
-								            ]
-								          ],
-								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
-								            "imageBackgroundColor" => "#FFFFFF",
-								            "title" => "กรุณาเลือกจังหวัด",
-								            "text" => "ภาคเหนือ",
-								            "actions" => [
-								                [
-								                    "type" => "message",
-								                    "label" => "เชียงราย",
-								                    "text" => "รายงานสภาพอากาศของเชียงราย"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "เชียงใหม่",
-								                    "text" => "รายงานสภาพอากาศของเชียงใหม่"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "น่าน",
-								                    "text" => "รายงานสภาพอากาศของน่าน"
+								                    "label" => "พยากรณ์อากาศ",
+								                    "text" => "ช่วยพยากรณ์อากาศที"
 								                ]
 								            ]
 								          ]
@@ -788,7 +760,7 @@ if (!is_null($events['events'])) {
 						// 				          ],
 						// 				          [
 						// 				            "type" => "message",
-						// 				            "label" => "สอนให้ Jake พูดยังไง",
+						// 				            "label" => "สอน Jake ยังไง",
 						// 				            "text" => "วิธีสอน Jake"
 						// 				          ],
 						// 				          [
