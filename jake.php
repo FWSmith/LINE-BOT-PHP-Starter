@@ -699,6 +699,335 @@ if (!is_null($events['events'])) {
 			           				'text' => '(ลบคำ) delete:คำที่ส่ง'
 			           			]
 			           	];
+					}else if(strpos($text, "พยากรณ์") !== false){
+						if(strpos($text, 'กรุงเทพ') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225448";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'นนทบุรี') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226072";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'นครนายก') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D90501154";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'กาญจนบุรี') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225985";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'ราชบุรี') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225614";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'ประจวบคีรีขันธ์') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226118";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'เชียงราย') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225134";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'เชียงใหม่') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225955";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else if(strpos($text, 'น่าน') !== false){
+							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226063";
+						    $temp = curl_init();  
+						    curl_setopt($temp,CURLOPT_URL,$temp_url);
+						    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+						    $output=curl_exec($temp);
+						    curl_close($temp);
+						    $temp_result = json_decode($output);
+						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+						    $messages = [
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+						    	],
+						    	[
+						    		'type' => 'text',
+						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+						    	]
+						    ];
+						}else{
+						$messages = [
+							[
+								  "type" => "template",
+								  "altText" => "this is a carousel template",
+								  "template" => [
+								      "type" => "carousel",
+								      "columns" => [
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคกลาง",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "กรุงเทพมหานคร",
+								                    "text" => "พยากรณ์ของกรุงเทพ"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นนทบุรี",
+								                    "text" => "พยากรณ์ของนนทบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นครนายก",
+								                    "text" => "พยากรณ์ของนครนายก"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคตะวันตก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "กาญจนบุรี",
+								                    "text" => "พยากรณ์ของกาญจนบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "ราชบุรี",
+								                    "text" => "พยากรณ์ของราชบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "ประจวบคีรีขันธ์",
+								                    "text" => "พยากรณ์ของประจวบคีรีขันธ์"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคเหนือ",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "เชียงราย",
+								                    "text" => "พยากรณ์ของเชียงราย"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "เชียงใหม่",
+								                    "text" => "พยากรณ์ของเชียงใหม่"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "น่าน",
+								                    "text" => "พยากรณ์ของน่าน"
+								                ]
+								            ]
+								          ]
+								      ],
+								      "imageAspectRatio" => "rectangle",
+								      "imageSize" => "cover"
+								  ]
+							]
+						];		
+					}
+
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
