@@ -684,7 +684,7 @@ if (!is_null($events['events'])) {
 								  	]
 								]
 			           	];
-					}else if(strpos($text, "วิธีสอน" !== false)){
+					}else if(strpos($text, "วิธีสอน") !== false){
 						$messages = [
 			           			[
 			           				'type' => 'text',
