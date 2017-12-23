@@ -33,7 +33,7 @@ if (!is_null($events['events'])) {
 			if($rowCount >= 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 				if($Fetch_Status['bot_status'] == 'true'){
-				$Select_Train = "SELECT * FROM bot_train WHERE textbot_train = '%$text%' AND group_id = :group_id";
+				$Select_Train = "SELECT * FROM bot_train WHERE textbot_train = '%{$text}%' AND group_id = :group_id";
 				$Query_Train = $pdo->prepare($Select_Train);
 				$Query_Train->execute(Array(
 					":group_id" => $groupId
@@ -647,5 +647,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OๅK";
 ?>
