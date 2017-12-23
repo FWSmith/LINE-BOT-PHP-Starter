@@ -13,7 +13,6 @@ if (!is_null($events['events'])) {
 		 	$text = $event['message']['text'];				
 			//Get Group ID
 			$groupId = $event['source']['groupId'];
-			$latitude = $event['message']['latitude'];
 			//Get User ID
 			$userId = $event['source']['userId'];
 			// Get replyToken
@@ -69,7 +68,7 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
-			           				'text' => $latitude
+			           				'text' => 'มีอะไรให้รับใช้ครับ'
 			           			]
 			           		];
 			           	}else if($Name == 'MΔÏ'){
