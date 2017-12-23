@@ -553,7 +553,7 @@ if (!is_null($events['events'])) {
 						$messages = [
 			           			[
 								  "type" => "imagemap",
-								  "baseUrl" => "https://example.com/bot/images/rm001",
+								  "baseUrl" => "https://fsmith.net/img/jake.jpg",
 								  "altText" => "this is an imagemap",
 								  "baseSize" => [
 								      "height" => 1040,
