@@ -693,44 +693,72 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคกลาง",
 								            "actions" => [
-								                  [
-										            "type" => "message",
-										            "label" => "Jake คืออะไร",
-										            "text" => "นายเป็นใคร"
-										          ],
-										          [
-										            "type" => "message",
-										            "label" => "สอนให้ Jake พูดยังไง",
-										            "text" => "วิธีสอน Jake"
-										          ],
-										          [
-										            "type" => "message",
-										            "label" => "สภาพอากาศของวันนี้",
-										            "text" => "รายงานสภาพอากาศวันนี้"
-										          ]
+								                [
+								                    "type" => "message",
+								                    "label" => "กรุงเทพมหานคร",
+								                    "text" => "รายงานสภาพอากาศของกรุงเทพ"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นนทบุรี",
+								                    "text" => "รายงานสภาพอากาศของนนทบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นครนายก",
+								                    "text" => "รายงานสภาพอากาศของนครนายก"
+								                ]
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
 								            "imageBackgroundColor" => "#000000",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคตะวันตก",
 								            "actions" => [
 								                [
-										            "type" => "message",
-										            "label" => "จำนวนเบอร์เพื่อนๆ",
-										            "text" => "เบอร์เพื่อนทั้งหมด"
-										        ],
-										        [
-										            "type" => "message",
-										            "label" => "พยากรณ์อากาศ",
-										            "text" => "ช่วยพยากรณ์อากาศที"
-										        ]
+								                    "type" => "message",
+								                    "label" => "กาญจนบุรี",
+								                    "text" => "รายงานสภาพอากาศของกาญจนบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "ราชบุรี",
+								                    "text" => "รายงานสภาพอากาศของราชบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "ประจวบคีรีขันธ์",
+								                    "text" => "รายงานสภาพอากาศของประจวบคีรีขันธ์"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคเหนือ",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "เชียงราย",
+								                    "text" => "รายงานสภาพอากาศของเชียงราย"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "เชียงใหม่",
+								                    "text" => "รายงานสภาพอากาศของเชียงใหม่"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "น่าน",
+								                    "text" => "รายงานสภาพอากาศของน่าน"
+								                ]
 								            ]
 								          ]
 								      ],
@@ -739,6 +767,61 @@ if (!is_null($events['events'])) {
 								  ]
 							]
 						];		
+
+						// $messages = [
+						// 	[
+						// 		  "type" => "template",
+						// 		  "altText" => "this is a carousel template",
+						// 		  "template" => [
+						// 		      "type" => "carousel",
+						// 		      "columns" => [
+						// 		          [
+						// 		            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+						// 		            "imageBackgroundColor" => "#FFFFFF",
+						// 		            "title" => "ตัวเลือก",
+						// 		            "text" => "กรุณาเลือก",
+						// 		            "actions" => [
+						// 		                  [
+						// 				            "type" => "message",
+						// 				            "label" => "Jake คืออะไร",
+						// 				            "text" => "นายเป็นใคร"
+						// 				          ],
+						// 				          [
+						// 				            "type" => "message",
+						// 				            "label" => "สอนให้ Jake พูดยังไง",
+						// 				            "text" => "วิธีสอน Jake"
+						// 				          ],
+						// 				          [
+						// 				            "type" => "message",
+						// 				            "label" => "สภาพอากาศของวันนี้",
+						// 				            "text" => "รายงานสภาพอากาศวันนี้"
+						// 				          ]
+						// 		            ]
+						// 		          ],
+						// 		          [
+						// 		            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+						// 		            "imageBackgroundColor" => "#000000",
+						// 		            "title" => "ตัวเลือก",
+						// 		            "text" => "กรุณาเลือก",
+						// 		            "actions" => [
+						// 		                [
+						// 				            "type" => "message",
+						// 				            "label" => "จำนวนเบอร์เพื่อนๆ",
+						// 				            "text" => "เบอร์เพื่อนทั้งหมด"
+						// 				        ],
+						// 				        [
+						// 				            "type" => "message",
+						// 				            "label" => "พยากรณ์อากาศ",
+						// 				            "text" => "ช่วยพยากรณ์อากาศที"
+						// 				        ]
+						// 		            ]
+						// 		          ]
+						// 		      ],
+						// 		      "imageAspectRatio" => "rectangle",
+						// 		      "imageSize" => "cover"
+						// 		  ]
+						// 	]
+						// ];		
 
 					}else if(strpos($text, 'นายเป็นใคร') !== false){
 						$messages = [
