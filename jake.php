@@ -109,46 +109,6 @@ if (!is_null($events['events'])) {
 							            "type" => "message",
 							            "label" => "กรุงเทพ",
 							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กาญจนบุรี",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ],
-							          [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
 							          ]
 							      ]
 							  ]
