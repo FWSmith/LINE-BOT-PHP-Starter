@@ -1081,22 +1081,26 @@ if (!is_null($events['events'])) {
 						$header = substr($response, 0, $header_size);
 						$body = substr($response, $header_size);
 						$explode = explode(" ", $body);
+						$a = str_replace('size="6">', "", $explode[1425]);
+						$b = str_replace('size="6">', "", $explode[1481]);
+						$c = str_replace('size="6">', "", $explode[1615]);
+						$d = str_replace('size="6">', "", $explode[1671]);						
 						$messages = [
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคารับซื้อทองคำแท่ง : '.str_replace('size="6">', "", $explode[1425]).' บาท'
+							    		'text' => 'ราคารับซื้อทองคำแท่ง : '.str_replace('</font></b></span>', "", $a.' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคาขายออกทองคำแท่ง : '.str_replace('size="6">', "", $explode[1481]).' บาท'
+							    		'text' => 'ราคาขายออกทองคำแท่ง : '.str_replace('</font></b></span>', "", $b.' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคารับซื้อทองรูปพรรณ : '.str_replace('size="6">', "", $explode[1615]).' บาท'
+							    		'text' => 'ราคารับซื้อทองรูปพรรณ : '.str_replace('</font></b></span>', "", $c.' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคาขายออกทองรูปพรรณ : '.str_replace('size="6">', "", $explode[1671]).' บาท'
+							    		'text' => 'ราคาขายออกทองรูปพรรณ : '.str_replace('</font></b></span>', "", $d.' บาท'
 							    	]
 							    ];
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
