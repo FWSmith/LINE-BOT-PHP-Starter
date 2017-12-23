@@ -437,9 +437,9 @@ if (!is_null($events['events'])) {
 						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer_id, group_id) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer_id, :group_id); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
 						$Query_Insert->execute(Array(
-							":idbot_brain" => NULL,
-							":textbot_brain" => $train[1],
-							":replybot_brain" => $train[2],
+							":idbot_train" => NULL,
+							":textbot_train" => $train[1],
+							":replybot_train" => $train[2],
 							":trainer_id" => $userId,
 							":group_id" => $groupId
 						));
