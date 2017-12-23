@@ -30,16 +30,7 @@ if (!is_null($events['events'])) {
 			$rowCount = $Query_Status->rowCount();
 			if($rowCount == 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
-			}else{
-				$Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
-				$Query_Insert = $pdo->prepare($Insert_Status);
-				$Query_Insert->execute(Array(
-					":ID" => NULL,
-					":bot_status" => $status,
-					":bot_groupid" => $groupId
-				));
-			}
-			if($Fetch_Status['bot_status'] == 'true'){
+							if($Fetch_Status['bot_status'] == 'true'){
 				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
 				$Query_Train = $pdo->prepare($Select_Train);
 				$Query_Train->execute();
@@ -612,6 +603,16 @@ if (!is_null($events['events'])) {
 			        ];
 				}
 			}
+			}else{
+				$Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
+				$Query_Insert = $pdo->prepare($Insert_Status);
+				$Query_Insert->execute(Array(
+					":ID" => NULL,
+					":bot_status" => $status,
+					":bot_groupid" => $groupId
+				));
+			}
+
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -635,5 +636,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "O2KK";
+echo "OK1";
 ?>
