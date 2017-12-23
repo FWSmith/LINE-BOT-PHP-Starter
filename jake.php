@@ -91,7 +91,7 @@ if (!is_null($events['events'])) {
 			           				'text' => $reply
 			           			]
 			           	];
-					}else if(strpos($text, 'อุณหภูมิ') !== false){
+					}else if(strpos($text, 'อากาศ') !== false){
 						$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225448";
 					    $temp = curl_init();  
 					    curl_setopt($temp,CURLOPT_URL,$temp_url);
@@ -103,7 +103,19 @@ if (!is_null($events['events'])) {
 					    $messages = [
 					    	[
 					    		'type' => 'text',
-					    		'text' => 'ขณะนี้อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศาเซลเซียส'
+					    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
 					    	]
 					    ];
 					}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
