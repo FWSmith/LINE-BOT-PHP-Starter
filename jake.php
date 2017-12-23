@@ -1065,6 +1065,79 @@ if (!is_null($events['events'])) {
 						];		
 					}
 
+					}else if(strpos($text, "ดูดวง") !== false){
+						$messages = [
+							[
+								  "type" => "template",
+								  "altText" => "this is a carousel template",
+								  "template" => [
+								      "type" => "carousel",
+								      "columns" => [
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "วันจันทร์",
+								                    "text" => "วันจันทร์"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "วันอังคาร",
+								                    "text" => "วันอังคาร"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "วันพุธ",
+								                    "text" => "วันพุธ"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake2.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "วันพฤหัสบดี",
+								                    "text" => "วันพฤหัสบดี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "วันศุกร์",
+								                    "text" => "วันศุกร์"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "วันเสาร์",
+								                    "text" => "วันเสาร์"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/jake2.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "ตัวเลือก",
+								            "text" => "กรุณาเลือก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "วันอาทิตย์",
+								                    "text" => "วันอาทิตย์"
+								                ]
+								            ]
+								          ]
+								      ],
+								      "imageAspectRatio" => "rectangle",
+								      "imageSize" => "cover"
+								  ]
+							]
+						];	
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
@@ -1114,8 +1187,8 @@ if (!is_null($events['events'])) {
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "ดูดวงวันเกิด",
-								                    "text" => "ดูดวงวันเกิด"
+								                    "label" => "ดูดวงรายวัน",
+								                    "text" => "ดูดวงรายวัน"
 								                ]
 								            ]
 								          ]
