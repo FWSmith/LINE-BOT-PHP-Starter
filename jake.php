@@ -411,7 +411,7 @@ if (!is_null($events['events'])) {
 			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
 			           			]
 			           	];
-					}else if(strpos($text, "Jake เงียบ") !== false || strpos($text, "Jakeเงียบ") !== false || strpos($text, "Jake หุบ") !== false || strpos($text, "Jake หยุด") !== false){
+					}else if(strpos($text, "Jake เงียบ") !== false || strpos($text, "Jakeเงียบ") !== false || strpos($text, "Jake หุบ") !== false || strpos($text, "Jake หยุด") !== false || strpos($text, "หุบ") !== false){
 						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
 						$Query_Update = $pdo->prepare($Update_Status);
 						$Query_Update->execute();
