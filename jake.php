@@ -1104,7 +1104,7 @@ if (!is_null($events['events'])) {
 								            "actions" => [
 								                [
 								                    "type" => "message",
-								                    "label" => "พยากรณ์อากาศ",
+								                    "label" => "พยากรณ์อากาศวันพรุ่งนี้",
 								                    "text" => "ช่วยพยากรณ์ที"
 								                ],
 								                [
