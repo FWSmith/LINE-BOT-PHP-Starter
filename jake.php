@@ -24,9 +24,11 @@ if (!is_null($events['events'])) {
 			$password = '01a9a1f5';
 			$db = 'heroku_a0500905d74bead';
 			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
-			$Select_Status = "SELECT * FROM bot_speak WHERE bot_groupid";
+			$Select_Status = "SELECT * FROM bot_speak WHERE bot_groupid = :groupId";
 			$Query_Status = $pdo->prepare($Select_Status);
-			$Query_Status->execute();
+			$Query_Status->execute(Array(
+				":groupId" => $groupId
+			));
 			$rowCount = $Query_Status->rowCount();
 			if($rowCount == 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
