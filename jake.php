@@ -1132,13 +1132,13 @@ if (!is_null($events['events'])) {
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "",
-								                    "text" => ""
+								                    "label" => "-",
+								                    "text" => "-"
 								                ],
 								                [
 								                    "type" => "message",
-								                    "label" => "",
-								                    "text" => ""
+								                    "label" => "-",
+								                    "text" => "-"
 								                ]
 								            ]
 								          ]
