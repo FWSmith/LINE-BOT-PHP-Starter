@@ -548,7 +548,7 @@ if (!is_null($events['events'])) {
 							      ]
 							  ]
 							]
-						]
+						];
 					}else{
 						$numbers = range(1, 12);
 						shuffle($numbers);
