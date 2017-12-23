@@ -39,7 +39,7 @@ if (!is_null($events['events'])) {
 					":text_bot" => $text,
 					":group_id" => $groupId
 				));
-				while ($Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);) {
+				while ($Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC)) {
 					$reply = $Fetch_Train['replybot_train']
 				}
 				if($groupId != '' && $userId != ''){
