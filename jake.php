@@ -486,12 +486,24 @@ if (!is_null($events['events'])) {
 			           			],
 			           			[
 			           				'type' => 'text',
+			           				'text' => 'ผมเป็นบอทเอาไว้พูดคุยเล่น และ อำนวยความสะดวก'
+			           			],
+			           			[
+			           				'type' => 'text',
 			           				'text' => 'วิธีสอนให้ Jake พูด'
 			           			],
 			           			[
 			           				'type' => 'text',
 			           				'text' => 'train:คำพูดที่ส่ง:คำพูดที่ตอบ'
-			           			]
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'วิธีทำให้ Jake ลืม'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'delete:คำพูดที่ส่ง'
+			           			],
 			           	];
 					}else if(strpos($text, "template") !== false){
 						$messages = [
@@ -542,6 +554,11 @@ if (!is_null($events['events'])) {
 							          ],
 							          [
 							            "type" => "message",
+							            "label" => "Location ของฉันตอนนี้",
+							            "text" => "รายงานสถานที่ของฉัน"
+							          ],
+							          [
+							            "type" => "message",
 							            "label" => "เบอร์เพื่อนๆ",
 							            "text" => "เบอร์เพื่อนทั้งหมด"
 							          ]
@@ -552,37 +569,30 @@ if (!is_null($events['events'])) {
 					}else if(strpos($text, 'นายเป็นใคร') !== false){
 						$messages = [
 			           			[
-								  "type" => "imagemap",
-								  "baseUrl" => "https://fsmith.net/img/jake.jpg",
-								  "altText" => "this is an imagemap",
-								  "baseSize" => [
-								      "height" => 1040,
-								      "width" => 1040
-								  ],
-								  "actions" => [
-								      [
-								          "type" => "uri",
-								          "linkUri" => "https://example.com/",
-								          "area" => [
-								              "x" => 0,
-								              "y" => 0,
-								              "width" => 520,
-								              "height" => 1040
-								          ]
-								      ],
-								      [
-								          "type" => "message",
-								          "text" => "hello",
-								          "area" => [
-								              "x" => 520,
-								              "y" => 0,
-								              "width" => 520,
-								              "height" => 1040
-								          ]
-								      ]
-								  ]
-								]
-							];
+			           				'type' => 'text',
+			           				'text' => 'สวัสดีครับผมชื่อ Jake'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'ผมเป็นบอทเอาไว้พูดคุยเล่น และ อำนวยความสะดวก'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'วิธีสอนให้ Jake พูด'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'train:คำพูดที่ส่ง:คำพูดที่ตอบ'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'วิธีทำให้ Jake ลืม'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'delete:คำพูดที่ส่ง'
+			           			],
+			           	];
 					}else{
 						$numbers = range(1, 12);
 						shuffle($numbers);
