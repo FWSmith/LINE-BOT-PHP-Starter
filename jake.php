@@ -33,12 +33,12 @@ if (!is_null($events['events'])) {
 			if($rowCount >= 1){
 				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
 							if($Fetch_Status['bot_status'] == 'true'){
-				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
+				$Select_Train = "SELECT * FROM bot_train WHERE textbot_train LIKE '%{$text}%' AND group_id = '$groupId'";
 				$Query_Train = $pdo->prepare($Select_Train);
 				$Query_Train->execute();
 				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
 				if($groupId != '' && $userId != ''){
-					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false || strpos($text, 'เห้') !== false){
+					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
 						$headers_gp = array('Authorization: Bearer ' . $access_token);
 			           	$url_gp = 'https://api.line.me/v2/bot/group/'.$groupId.'/member/'.$userId.'';
 	                    $ch_gp = curl_init($url_gp);
@@ -432,15 +432,16 @@ if (!is_null($events['events'])) {
 			           				'text' => 'Jake ไปละนะครับ ไว้เจอกันใหม่'
 			           			]
 			           	];
-					}else if(strpos($text, 'train') !== false){
+					}else if(strpos($text, 'train:') !== false){
 						$train = explode(":", $text);
-						$Insert_train = "INSERT INTO bot_brain (idbot_brain, textbot_brain, replybot_brain, trainer_id) VALUES (:idbot_brain, :textbot_brain, :replybot_brain, :trainer_id); ";
+						$Insert_train = "INSERT INTO bot_train (idbot_train, textbot_train, replybot_train, trainer_id, group_id) VALUES (:idbot_train, :textbot_train, :replybot_train, :trainer_id, :group_id); ";
 						$Query_Insert = $pdo->prepare($Insert_train);
 						$Query_Insert->execute(Array(
 							":idbot_brain" => NULL,
 							":textbot_brain" => $train[1],
 							":replybot_brain" => $train[2],
-							":trainer_id" => $userId
+							":trainer_id" => $userId,
+							":group_id" => $groupId
 						));
 						$messages = [
 			           			[
@@ -454,11 +455,12 @@ if (!is_null($events['events'])) {
 			           	];
 					}else if(strpos($text, 'delete') !== false){
 						$delete_text = explode(":", $text);
-						$Delete_train = "DELETE FROM `bot_brain` WHERE `textbot_brain` = :textbot_brain AND `trainer_id` = :trainer_id";
+						$Delete_train = "DELETE FROM `bot_train` WHERE `textbot_train` = :textbot_train AND `trainer_id` = :trainer_id AND `group_id` = :group_id";
 						$Query_Delete = $pdo->prepare($Delete_train);
 						$Query_Delete->execute(Array(
-							":textbot_brain" => $delete_text[1],
-							":trainer_id" => $userId
+							":textbot_train" => $delete_text[1],
+							":trainer_id" => $userId,
+							":group_id" => $groupId
 						));
 						$messages = [
 			           			[
@@ -643,5 +645,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK";
+echo "OK1";
 ?>
