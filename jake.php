@@ -94,24 +94,63 @@ if (!is_null($events['events'])) {
 					}else if(strpos($text, "อากาศ") !== false || strpos($text, "อุณหภูมิ") !== false){
 						$messages = [
 							[
-							  "type" => "template",
-							  "altText" => "this is a buttons template",
-							  "template" => [
-							      "type" => "buttons",
-							      "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
-							      "imageAspectRatio" => "rectangle",
-							      "imageSize" => "cover",
-							      "imageBackgroundColor" => "#FFFFFF",
-							      "title" => "ตัวเลือก",
-							      "text" => "กรุณาเลือกจังหวัด",
-							      "actions" => [
-							      	  [
-							            "type" => "message",
-							            "label" => "กรุงเทพ",
-							            "text" => "นายเป็นใคร"
-							          ]
-							      ]
-							  ]
+								[
+								  "type" => "template",
+								  "altText" => "this is a carousel template",
+								  "template" => [
+								      "type" => "carousel",
+								      "columns" => [
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "this is menu",
+								            "text" => "description",
+								            "actions" => [
+								                [
+								                    "type" => "postback",
+								                    "label" => "Buy",
+								                    "data" => "action=buy&itemid=111"
+								                ],
+								                [
+								                    "type" => "postback",
+								                    "label" => "Add to cart",
+								                    "data" => "action=add&itemid=111"
+								                ],
+								                [
+								                    "type" => "uri",
+								                    "label" => "View detail",
+								                    "uri" => "http://example.com/page/111"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "this is menu",
+								            "text" => "description",
+								            "actions" => [
+								                [
+								                    "type" => "postback",
+								                    "label" => "Buy",
+								                    "data" => "action=buy&itemid=222"
+								                ],
+								                [
+								                    "type" => "postback",
+								                    "label" => "Add to cart",
+								                    "data" => "action=add&itemid=222"
+								                ],
+								                [
+								                    "type" => "uri",
+								                    "label" => "View detail",
+								                    "uri" => "http://example.com/page/222"
+								                ]
+								            ]
+								          ]
+								      ],
+								      "imageAspectRatio" => "rectangle",
+								      "imageSize" => "cover"
+								  }
+								}
 							]
 						];
 					}else if(strpos($text, 'รายงาน') !== false){
