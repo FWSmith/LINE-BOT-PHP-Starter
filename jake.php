@@ -516,7 +516,7 @@ if (!is_null($events['events'])) {
 								  	]
 								]
 			           	];
-					}else if(strpos($text, "button") !== false){
+					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
 							  "type" => "template",
@@ -532,23 +532,36 @@ if (!is_null($events['events'])) {
 							      "actions" => [
 							          [
 							            "type" => "message",
-							            "label" => "Buy",
-							            "text" => "HELLO"
+							            "label" => "Jake คืออะไร",
+							            "text" => "นายเป็นใคร"
 							          ],
 							          [
-							            "type" => "postback",
-							            "label" => "Add to cart",
-							            "data" => "action=add&itemid=123"
+							            "type" => "message",
+							            "label" => "สภาพอากาศของวันนี้",
+							            "data" => "รายงานสภาพอากาศวันนี้"
 							          ],
 							          [
-							            "type" => "uri",
-							            "label" => "View detail",
-							            "uri" => "http://example.com/page/123"
+							            "type" => "message",
+							            "label" => "เบอร์เพื่อนๆ",
+							            "data" => "เบอร์เพื่อนทั้งหมด"
 							          ]
 							      ]
 							  ]
 							]
 						];
+					}else if(strpos($text, 'นายเป็นใคร') !== false){
+						$messages = [
+			           			[
+								   "type":"message",
+								   "text":"hello",
+								   "area":[  
+								      "x":520,
+								      "y":0,
+								      "width":520,
+								      "height":1040
+								  	]
+								]
+			           	];
 					}else{
 						$numbers = range(1, 12);
 						shuffle($numbers);
