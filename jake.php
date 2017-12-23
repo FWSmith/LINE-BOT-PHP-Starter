@@ -503,6 +503,26 @@ if (!is_null($events['events'])) {
 						];							
 						}
 
+					}else if(strpos($text, 'add:') !== false){
+						$phone = explode(":", $text);
+						$Insert_phone = "INSERT INTO `bot_phone` (`idbot_phone`, `num_botphone`, `owner_botphone`, `group_id`) VALUES (:ID, :num_botphone, :owner_botphone, :group_id);";
+						$Query_phone = $pdo->prepare($Insert_phone);
+						$Query_phone->execute(Array(
+							":ID" => NULL,
+							":num_botphone" => $phone[2],
+							":owner_botphone" => $phone[1],
+							":group_id" => $groupId
+						));
+						$messages = [
+						    [
+						       "type"=>"text", 
+						       "text"=>"เพิ่มเบอร์ของคุณ ".$phone[1]." แล้วครับ"
+						    ],
+						    [
+						       "type"=>"text", 
+						       "text"=>"ยินดีให้บริการครับ"
+						    ]
+					    ];
 					}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
 					    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
 					    $messages = [
