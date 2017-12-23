@@ -527,13 +527,13 @@ if (!is_null($events['events'])) {
 							      "imageAspectRatio" => "rectangle",
 							      "imageSize" => "cover",
 							      "imageBackgroundColor" => "#FFFFFF",
-							      "title" => "Menu",
-							      "text" => "Please select",
+							      "title" => "ตัวเลือก",
+							      "text" => "กรุณาเลือก",
 							      "actions" => [
 							          [
-							            "type" => "postback",
+							            "type" => "message",
 							            "label" => "Buy",
-							            "data" => "action=buy&itemid=123"
+							            "text" => "HELLO"
 							          ],
 							          [
 							            "type" => "postback",
