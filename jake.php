@@ -606,13 +606,18 @@ if (!is_null($events['events'])) {
 				}
 			}
 			}else{
-				$Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
-				$Query_Insert = $pdo->prepare($Insert_Status);
-				$Query_Insert->execute(Array(
-					":ID" => NULL,
-					":bot_status" => $status,
-					":bot_groupid" => $groupId
+				$delete_status = "DELETE FROM `bot_speak` WHERE `bot_groupid` = :id";
+				$query_delete = $pdo->prepare($delete_status);
+				$query_delete->execute(Array(
+					":id" => $groupId
 				));
+				// $Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
+				// $Query_Insert = $pdo->prepare($Insert_Status);
+				// $Query_Insert->execute(Array(
+				// 	":ID" => NULL,
+				// 	":bot_status" => $status,
+				// 	":bot_groupid" => $groupId
+				// ));
 			}
 
 
@@ -638,5 +643,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "O1K1";
 ?>
