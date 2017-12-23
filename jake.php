@@ -684,6 +684,21 @@ if (!is_null($events['events'])) {
 								  	]
 								]
 			           	];
+					}else if(strpos($text, "วิธีสอน" !== false)){
+						$messages = [
+			           			[
+			           				'type' => 'text',
+			           				'text' => 'วิธีสอน Jake'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => '(เรียนรู้คำ) train:คำที่ส่ง:คำที่ตอบกลับ'
+			           			],
+			           			[
+			           				'type' => 'text',
+			           				'text' => '(ลบคำ) delete:คำที่ส่ง'
+			           			]
+			           	];
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
 						$messages = [
 							[
