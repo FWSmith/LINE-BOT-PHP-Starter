@@ -588,7 +588,7 @@ if (!is_null($events['events'])) {
 	        			]
 			        ];
 				}else if(strpos($text, "Jake พูด") !== false || strpos($text, "Jakeพูด") !== false){
-					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE bot_groupid = :group_id";
+					$Update_Status = "UPDATE bot_speak SET bot_status = 'true' WHERE bot_groupid = :group_id";
 					$Query_Update = $pdo->prepare($Update_Status);
 					$Query_Update->execute(Array(
 						":group_id" => $groupId
