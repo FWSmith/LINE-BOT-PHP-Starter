@@ -548,32 +548,36 @@ if (!is_null($events['events'])) {
 							":group_id" => $groupId
 						));
 						if(strpos($text, 'ทั้งหมด') !== false){
+							$messages = [
+							    [
+							       "type"=>"text", 
+							       "text"=>"เบอร์ทั้งหมด : ".$Query_Phone->rowCount(). " เบอร์"
+							    ],
+							    [
+							       "type"=>"text", 
+							       "text"=>"เพิ่มเบอร์ (add:ชื่อ:เบอร์)"
+							    ],
+							    [
+							       "type"=>"text", 
+							       "text"=>"ลบเบอร์ (remove:ชื่อ)"
+							    ]
+						    ];
+						}else{
 							while ($Fetch_Phone = $Query_Phone->fetch(PDO::FETCH_ASSOC)) {
+								if(strpos($text, $Fetch_Phone['owner_botphone']) !== false){
 							    $messages = [
 								    [
 								       "type"=>"text", 
 								       "text"=>"เบอร์ของคุณ ".$Fetch_Phone['owner_botphone']." คือ ".$Fetch_Phone['num_botphone']
+								    ],
+								    [
+								       "type"=>"text", 
+								       "text"=>"ยินดีให้บริการครับ"
 								    ]
-							    ];								
+							    ];
+								}						
 							}
-						}else{
-						while ($Fetch_Phone = $Query_Phone->fetch(PDO::FETCH_ASSOC)) {
-							if(strpos($text, $Fetch_Phone['owner_botphone']) !== false){
-						    $messages = [
-							    [
-							       "type"=>"text", 
-							       "text"=>"เบอร์ของคุณ ".$Fetch_Phone['owner_botphone']." คือ ".$Fetch_Phone['num_botphone']
-							    ],
-							    [
-							       "type"=>"text", 
-							       "text"=>"ยินดีให้บริการครับ"
-							    ]
-						    ];
-							}
-						}							
 						}
-
-
 					}else if($text == 'Shutdown Jake'){
 						$Update_Status = "UPDATE bot_speak SET bot_status = 'false' WHERE bot_groupid = :group_id";
 						$Query_Update = $pdo->prepare($Update_Status);
@@ -710,7 +714,7 @@ if (!is_null($events['events'])) {
 							          ],
 							          [
 							            "type" => "message",
-							            "label" => "เบอร์เพื่อนๆ",
+							            "label" => "จำนวนเบอร์เพื่อนๆ",
 							            "text" => "เบอร์เพื่อนทั้งหมด"
 							          ]
 							      ]
