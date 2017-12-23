@@ -498,7 +498,7 @@ if (!is_null($events['events'])) {
 								]
 			           	];
 					}else{
-						$numbers = range(1, 3);
+						$numbers = range(1, 12);
 						shuffle($numbers);
 						foreach ($numbers as $number) {
 						    if($number == 1){
@@ -507,6 +507,24 @@ if (!is_null($events['events'])) {
 						    	$reply = "ใช่หรอ";
 						    }else if($number == 3){
 						    	$reply = "ไม่รู้";
+						    }else if($number == 4){
+						    	$reply = "อ๋อๆ";
+						    }else if($number == 5){
+						    	$reply = "โอเคๆ";
+						    }else if($number == 6){
+						    	$reply = "แล้วแต่เลย";
+						    }else if($number == 7){
+						    	$reply = "ไม่รู้ว้อย";
+						    }else if($number == 8){
+						    	$reply = "เจ้กรักทุกคนนะ";
+						    }else if($number == 9){
+						    	$reply = "เจ้ก คิดถึงฟินจัง ._.";
+						    }else if($number == 10){
+						    	$reply = "หิวว้อยยย";
+						    }else if($number == 11){
+						    	$reply = "ต้องการคนดูแล";
+						    }else if($number == 12){
+						    	$reply = "อิอิ";
 						    }
 						}
 						$messages = [
