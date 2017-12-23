@@ -1129,6 +1129,16 @@ if (!is_null($events['events'])) {
 								                    "type" => "message",
 								                    "label" => "วันอาทิตย์",
 								                    "text" => "วันอาทิตย์"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "",
+								                    "text" => ""
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "",
+								                    "text" => ""
 								                ]
 								            ]
 								          ]
