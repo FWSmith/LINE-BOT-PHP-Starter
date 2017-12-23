@@ -547,9 +547,8 @@ if (!is_null($events['events'])) {
 						$Query_Phone->execute(Array(
 							":group_id" => $groupId
 						));
-						for ($i=0; $i < $Query_Phone->rowCount()-1; $i++) { 
-							$Fetch_Phone[] = $Query_Phone->fetch(PDO::FETCH_ASSOC);
-							if(strpos($text, $Fetch_Phone[$i]['owner_botphone']) !== false){
+						while ($Fetch_Phone = $Query_Phone->fetch(PDO::FETCH_ASSOC)) {
+							if(strpos($text, $Fetch_Phone['owner_botphone']) !== false){
 						    $messages = [
 							    [
 							       "type"=>"text", 
