@@ -94,7 +94,6 @@ if (!is_null($events['events'])) {
 					}else if(strpos($text, "อากาศ") !== false || strpos($text, "อุณหภูมิ") !== false){
 						$messages = [
 							[
-								[
 								  "type" => "template",
 								  "altText" => "this is a carousel template",
 								  "template" => [
@@ -150,7 +149,6 @@ if (!is_null($events['events'])) {
 								      "imageAspectRatio" => "rectangle",
 								      "imageSize" => "cover"
 								  ]
-								]
 							]
 						];
 					}else if(strpos($text, 'รายงาน') !== false){
