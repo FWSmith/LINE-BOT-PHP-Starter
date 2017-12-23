@@ -503,7 +503,7 @@ if (!is_null($events['events'])) {
 			           			[
 			           				'type' => 'text',
 			           				'text' => 'delete:คำพูดที่ส่ง'
-			           			],
+			           			]
 			           	];
 					}else if(strpos($text, "template") !== false){
 						$messages = [
@@ -591,7 +591,7 @@ if (!is_null($events['events'])) {
 			           			[
 			           				'type' => 'text',
 			           				'text' => 'delete:คำพูดที่ส่ง'
-			           			],
+			           			]
 			           	];
 					}else{
 						$numbers = range(1, 12);
