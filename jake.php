@@ -523,7 +523,7 @@ if (!is_null($events['events'])) {
 							  "altText" => "this is a buttons template",
 							  "template" => [
 							      "type" => "buttons",
-							      "thumbnailImageUrl" => "https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/5/5c/S3e6_We%27re_Finn_and_Jake.png/revision/latest/scale-to-width-down/310?cb=20131118154439",
+							      "thumbnailImageUrl" => "http://static.tvgcdn.net/mediabin/galleries/shows/a_f/aa_ah/adventure_time_with_finn_jake/season1/adventure-time-finn-jake-07.jpg",
 							      "imageAspectRatio" => "rectangle",
 							      "imageSize" => "cover",
 							      "imageBackgroundColor" => "#FFFFFF",
