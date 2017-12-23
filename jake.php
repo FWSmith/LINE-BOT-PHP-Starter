@@ -723,18 +723,8 @@ if (!is_null($events['events'])) {
 								            "actions" => [
 								                [
 								                    "type" => "message",
-								                    "label" => "Jake คืออะไร",
-								                    "text" => "นายเป็นใคร"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "สอน Jake ยังไง",
-								                    "text" => "วิธีสอน Jake"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "สภาพอากาศของวันนี้",
-								                    "text" => "รายงานสภาพอากาศวันนี้"
+								                    "label" => "จำนวนเบอร์เพื่อนๆ",
+								                    "text" => "เบอร์เพื่อนทั้งหมด"
 								                ]
 								            ]
 								          ]
