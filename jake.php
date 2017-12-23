@@ -714,24 +714,6 @@ if (!is_null($events['events'])) {
 								                    "text" => "รายงานสภาพอากาศวันนี้"
 								                ]
 								            ]
-								          ],
-								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
-								            "imageBackgroundColor" => "#000000",
-								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
-								            "actions" => [
-								                [
-								                    "type" => "message",
-								                    "label" => "จำนวนเบอร์เพื่อนๆ",
-								                    "text" => "เบอร์เพื่อนทั้งหมด"
-								                ],
-								                [
-								                    "type" => "message",
-								                    "label" => "พยากรณ์อากาศ",
-								                    "text" => "ช่วยพยากรณ์อากาศที"
-								                ]
-								            ]
 								          ]
 								      ],
 								      "imageAspectRatio" => "rectangle",
