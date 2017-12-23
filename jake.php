@@ -17,18 +17,28 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
-                        
+            $status = "true";
 			// Build message to reply back
 			$server = 'us-cdbr-iron-east-05.cleardb.net';
 			$username = 'b809e2f36f0522';
 			$password = '01a9a1f5';
 			$db = 'heroku_a0500905d74bead';
 			$pdo = new PDO("mysql:host=$server;dbname=$db", $username, $password);  
-			$Select_Status = "SELECT * FROM bot_status";
+			$Select_Status = "SELECT * FROM bot_speak WHERE bot_groupid";
 			$Query_Status = $pdo->prepare($Select_Status);
 			$Query_Status->execute();
-			$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
-			
+			$rowCount = $Query_Status->rowCount();
+			if($rowCount == 1){
+				$Fetch_Status = $Query_Status->fetch(PDO::FETCH_ASSOC);
+			}else{
+				$Insert_Status = "INSERT INTO `bot_speak` (`idbot_speak`, `bot_status`, `bot_groupid`) VALUES (:ID, :bot_status, :bot_groupid);";
+				$Query_Insert = $pdo->prepare($Insert_Status);
+				$Query_Insert->execute(Array(
+					":ID" => NULL,
+					":bot_status" => $status,
+					":bot_groupid" => $groupId
+				));
+			}
 			if($Fetch_Status['bot_status'] == 'true'){
 				$Select_Train = "SELECT * FROM bot_brain WHERE textbot_brain LIKE '%{$text}%'";
 				$Query_Train = $pdo->prepare($Select_Train);
@@ -398,9 +408,11 @@ if (!is_null($events['events'])) {
 					    ];
 					    }
 					}else if($text == 'Shutdown Jake'){
-						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
+						$Update_Status = "UPDATE bot_speak SET bot_status = 'false' WHERE bot_groupid = :group_id";
 						$Query_Update = $pdo->prepare($Update_Status);
-						$Query_Update->execute();
+						$Query_Update->execute(Array(
+							":group_id" => $groupId
+						));
 						$messages = [
 			           			[
 			           				'type' => 'text',
@@ -412,9 +424,11 @@ if (!is_null($events['events'])) {
 			           			]
 			           	];
 					}else if(strpos($text, "Jake เงียบ") !== false || strpos($text, "Jakeเงียบ") !== false || strpos($text, "Jake หุบ") !== false || strpos($text, "Jake หยุด") !== false || strpos($text, "หุบ") !== false){
-						$Update_Status = "UPDATE bot_status SET bot_status = 'false' WHERE idbot_status = 1";
+						$Update_Status = "UPDATE bot_speak SET bot_status = 'false' WHERE bot_groupid = :group_id";
 						$Query_Update = $pdo->prepare($Update_Status);
-						$Query_Update->execute();
+						$Query_Update->execute(Array(
+							":group_id" => $groupId
+						));
 						$messages = [
 			           			[
 			           				'type' => 'text',
@@ -565,9 +579,11 @@ if (!is_null($events['events'])) {
 
 			}else{
 				if($text == 'Start Jake'){
-					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE idbot_status = 1";
+					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE bot_groupid = :group_id";
 					$Query_Update = $pdo->prepare($Update_Status);
-					$Query_Update->execute();
+					$Query_Update->execute(Array(
+						":group_id" => $groupId
+					));
 					$messages = [
 	           			[
 	           				'type' => 'text',
@@ -579,9 +595,11 @@ if (!is_null($events['events'])) {
 	        			]
 			        ];
 				}else if(strpos($text, "Jake พูด") !== false || strpos($text, "Jakeพูด") !== false){
-					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE idbot_status = 1";
+					$Update_Status = "UPDATE bot_status SET bot_status = 'true' WHERE bot_groupid = :group_id";
 					$Query_Update = $pdo->prepare($Update_Status);
-					$Query_Update->execute();
+					$Query_Update->execute(Array(
+						":group_id" => $groupId
+					));
 					$messages = [
 	           			[
 	           				'type' => 'text',
@@ -617,5 +635,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OKK";
+echo "O2KK";
 ?>
