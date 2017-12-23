@@ -105,26 +105,46 @@ if (!is_null($events['events'])) {
 							      "title" => "ตัวเลือก",
 							      "text" => "กรุณาเลือกจังหวัด",
 							      "actions" => [
+							      	  [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
 							          [
 							            "type" => "message",
 							            "label" => "กาญจนบุรี",
 							            "text" => "นายเป็นใคร"
-							          ]
-							      ]
-							  ]
-							],
-							[
-							  "type" => "template",
-							  "altText" => "this is a buttons template",
-							  "template" => [
-							      "type" => "buttons",
-							      "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
-							      "imageAspectRatio" => "rectangle",
-							      "imageSize" => "cover",
-							      "imageBackgroundColor" => "#FFFFFF",
-							      "title" => "ตัวเลือก",
-							      "text" => "กรุณาเลือกจังหวัด",
-							      "actions" => [
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
+							          [
+							            "type" => "message",
+							            "label" => "กรุงเทพ",
+							            "text" => "นายเป็นใคร"
+							          ],
 							          [
 							            "type" => "message",
 							            "label" => "กรุงเทพ",
@@ -132,29 +152,36 @@ if (!is_null($events['events'])) {
 							          ]
 							      ]
 							  ]
-							],
-							[
-							  "type" => "template",
-							  "altText" => "this is a buttons template",
-							  "template" => [
-							      "type" => "buttons",
-							      "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
-							      "imageAspectRatio" => "rectangle",
-							      "imageSize" => "cover",
-							      "imageBackgroundColor" => "#FFFFFF",
-							      "title" => "ตัวเลือก",
-							      "text" => "กรุณาเลือกจังหวัด",
-							      "actions" => [
-							          [
-							            "type" => "message",
-							            "label" => "เชียงใหม่",
-							            "text" => "นายเป็นใคร"
-							          ]
-							      ]
-							  ]
 							]
 						];
-					}else  if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
+					}else if(strpos($text, 'รายงาน') !== false){
+						$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225448";
+					    $temp = curl_init();  
+					    curl_setopt($temp,CURLOPT_URL,$temp_url);
+					    curl_setopt($temp,CURLOPT_RETURNTRANSFER,true);							 
+					    $output=curl_exec($temp);
+					    curl_close($temp);
+					    $temp_result = json_decode($output);
+					    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
+					    $messages = [
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
+					    	],
+					    	[
+					    		'type' => 'text',
+					    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
+					    	]
+					    ];
+					}else if(strpos($text, 'ขอเบอร์') !== false || strpos($text, 'เบอร์') !== false || strpos($text, 'เบอ') !== false){
 					    if(strpos($text, 'โฟร์ท') !== false || strpos($text, 'โฟท') !== false){
 					    $messages = [
 						    [
