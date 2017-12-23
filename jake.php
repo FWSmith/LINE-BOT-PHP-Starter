@@ -1077,7 +1077,7 @@ if (!is_null($events['events'])) {
 								            "thumbnailImageUrl" => "https://fsmith.net/img/magic1.png",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
+								            "text" => "กรุณาเลือกวันเกิดของคุณ",
 								            "actions" => [
 								                [
 								                    "type" => "message",
@@ -1100,7 +1100,7 @@ if (!is_null($events['events'])) {
 								            "thumbnailImageUrl" => "https://fsmith.net/img/magic2.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
+								            "text" => "กรุณาเลือกวันเกิดของคุณ",
 								            "actions" => [
 								                [
 								                    "type" => "message",
@@ -1123,7 +1123,7 @@ if (!is_null($events['events'])) {
 								            "thumbnailImageUrl" => "https://fsmith.net/img/magic4.png",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "ตัวเลือก",
-								            "text" => "กรุณาเลือก",
+								            "text" => "กรุณาเลือกวันเกิดของคุณ",
 								            "actions" => [
 								                [
 								                    "type" => "message",
