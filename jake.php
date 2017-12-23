@@ -79,7 +79,7 @@ if (!is_null($events['events'])) {
 			           			]
 			           		];
 			           	}
-					}else if($Fetch_Train){
+					}else if($reply != ''){
 						$messages = [
 			           			[
 			           				'type' => 'text',
