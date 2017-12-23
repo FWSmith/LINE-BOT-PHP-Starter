@@ -1088,19 +1088,19 @@ if (!is_null($events['events'])) {
 						$messages = [
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคารับซื้อทองคำแท่ง : '.str_replace('</font></b></span>', "", $a)
+							    		'text' => 'วันนี้ราคารับซื้อทองคำแท่งอยู่ที่ : '.str_replace('</font></b></span>', "", $a).' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคาขายออกทองคำแท่ง : '.str_replace('</font></b></span>', "", $b)
+							    		'text' => 'วันนี้ราคาขายออกทองคำแท่งอยู่ที่ : '.str_replace('</font></b></span>', "", $b).' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคารับซื้อทองรูปพรรณ : '.str_replace('</font></b></span>', "", $c)
+							    		'text' => 'วันนี้ราคารับซื้อทองรูปพรรณอยู่ที่ : '.str_replace('</font></b></span>', "", $c).' บาท'
 							    	],
 							    	[
 							    		'type' => 'text',
-							    		'text' => 'ราคาขายออกทองรูปพรรณ : '.str_replace('</font></b></span>', "", $d)
+							    		'text' => 'วันนี้ราคาขายออกทองรูปพรรณอยู่ที่ : '.str_replace('</font></b></span>', "", $d).' บาท'
 							    	]
 							    ];
 					}else if(strpos($text, "เมนู") !== false || strpos($text, "menu") !== false){
@@ -1153,7 +1153,7 @@ if (!is_null($events['events'])) {
 								                [
 								                    "type" => "message",
 								                    "label" => "ราคาทองวันนี้",
-								                    "text" => "ราคาทองวันนี้"
+								                    "text" => "ราคาทองวันนี้ กรุณารอ 5-10 วินาที"
 								                ]
 								            ]
 								          ]
