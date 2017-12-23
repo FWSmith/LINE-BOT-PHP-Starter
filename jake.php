@@ -709,24 +709,29 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
+						    
 						}else if(strpos($text, 'นนทบุรี') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226072";
 						    $temp = curl_init();  
@@ -736,24 +741,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'นครนายก') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D90501154";
 						    $temp = curl_init();  
@@ -763,24 +772,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'กาญจนบุรี') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225985";
 						    $temp = curl_init();  
@@ -790,24 +803,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'ราชบุรี') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225614";
 						    $temp = curl_init();  
@@ -817,24 +834,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'ประจวบคีรีขันธ์') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226118";
 						    $temp = curl_init();  
@@ -844,24 +865,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'เชียงราย') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225134";
 						    $temp = curl_init();  
@@ -871,24 +896,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'เชียงใหม่') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1225955";
 						    $temp = curl_init();  
@@ -898,24 +927,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else if(strpos($text, 'น่าน') !== false){
 							$temp_url = "https://query.yahooapis.com/v1/public/yql?format=json&q=select+%2A+from+weather.forecast+where+woeid%3D1226063";
 						    $temp = curl_init();  
@@ -925,24 +958,28 @@ if (!is_null($events['events'])) {
 						    curl_close($temp);
 						    $temp_result = json_decode($output);
 						    $Cel = ($temp_result->query->results->channel->item->condition->temp-32)*5/9;
-						    $messages = [
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'วันนี้ : '.date('d/m/Y H:i:s',strtotime($temp_result->query->results->channel->lastBuildDate))
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สถานที่ : '.$temp_result->query->results->channel->location->city
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'อุณหภูมิอยู่ที่ : '.(int)($Cel).' องศา'
-						    	],
-						    	[
-						    		'type' => 'text',
-						    		'text' => 'สภาพอากาศ : '.$temp_result->query->results->channel->item->condition->text
-						    	]
-						    ];
+						    foreach($temp_result->query->results->channel->item->forecast as $value){
+						    	$minCel = ($value->low-32)*5/9;
+						    	$maxCel = ($value->high-32)*5/9;
+								$messages = [
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'วันที่ : '.$value->date
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิต่ำสุด : '.(int)$minCel.' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'อุณหภูมิสูงสุด : '.(int)($maxCel).' องศา'
+							    	],
+							    	[
+							    		'type' => 'text',
+							    		'text' => 'สภาพอากาศ : '.$value->text
+							    	]
+							    ];
+						    }
 						}else{
 						$messages = [
 							[
