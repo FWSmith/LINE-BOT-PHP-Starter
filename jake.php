@@ -39,7 +39,9 @@ if (!is_null($events['events'])) {
 					":text_bot" => $text,
 					":group_id" => $groupId
 				));
-				$Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);
+				while ($Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC);) {
+					$reply = $Fetch_Train['replybot_train']
+				}
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
 						$headers_gp = array('Authorization: Bearer ' . $access_token);
@@ -81,7 +83,7 @@ if (!is_null($events['events'])) {
 						$messages = [
 			           			[
 			           				'type' => 'text',
-			           				'text' => $Fetch_Train['replybot_train']
+			           				'text' => $reply
 			           			]
 			           	];
 					}else if(strpos($text, 'อุณหภูมิ') !== false){
