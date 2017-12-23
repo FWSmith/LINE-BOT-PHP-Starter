@@ -102,46 +102,84 @@ if (!is_null($events['events'])) {
 								          [
 								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
-								            "title" => "this is menu",
-								            "text" => "description",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคกลาง",
 								            "actions" => [
 								                [
-								                    "type" => "postback",
-								                    "label" => "Buy",
-								                    "data" => "action=buy&itemid=111"
+								                    "type" => "message",
+								                    "label" => "กรุงเทพมหานคร",
+								                    "text" => "รายงานสภาพอากาศของกรุงเทพ"
 								                ],
 								                [
-								                    "type" => "postback",
-								                    "label" => "Add to cart",
-								                    "data" => "action=add&itemid=111"
+								                    "type" => "message",
+								                    "label" => "นนทบุรี",
+								                    "text" => "รายงานสภาพอากาศของนนทบุรี"
 								                ],
 								                [
-								                    "type" => "uri",
-								                    "label" => "View detail",
-								                    "uri" => "http://example.com/page/111"
+								                    "type" => "message",
+								                    "label" => "นครนายก",
+								                    "text" => "รายงานสภาพอากาศของนครนายก"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นครปฐม",
+								                    "text" => "รายงานสภาพอากาศของนครปฐม"
+								                ]
+								            ]
+								          ],
+								          [
+								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "imageBackgroundColor" => "#000000",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคตะวันตก",
+								            "actions" => [
+								                [
+								                    "type" => "message",
+								                    "label" => "กาญจนบุรี",
+								                    "text" => "รายงานสภาพอากาศของกาญจนบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "ราชบุรี",
+								                    "text" => "รายงานสภาพอากาศของราชบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "เพชรบุรี",
+								                    "text" => "รายงานสภาพอากาศของเพชรบุรี"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "นครปฐม",
+								                    "text" => "รายงานสภาพอากาศของประจวบคีรีขันธ์"
 								                ]
 								            ]
 								          ],
 								          [
 								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
-								            "imageBackgroundColor" => "#000000",
-								            "title" => "this is menu",
-								            "text" => "description",
+								            "imageBackgroundColor" => "#FFFFFF",
+								            "title" => "กรุณาเลือกจังหวัด",
+								            "text" => "ภาคเหนือ",
 								            "actions" => [
 								                [
-								                    "type" => "postback",
-								                    "label" => "Buy",
-								                    "data" => "action=buy&itemid=222"
+								                    "type" => "message",
+								                    "label" => "เชียงราย",
+								                    "text" => "รายงานสภาพอากาศของเชียงราย"
 								                ],
 								                [
-								                    "type" => "postback",
-								                    "label" => "Add to cart",
-								                    "data" => "action=add&itemid=222"
+								                    "type" => "message",
+								                    "label" => "เชียงใหม่",
+								                    "text" => "รายงานสภาพอากาศของเชียงใหม่"
 								                ],
 								                [
-								                    "type" => "uri",
-								                    "label" => "View detail",
-								                    "uri" => "http://example.com/page/222"
+								                    "type" => "message",
+								                    "label" => "น่าน",
+								                    "text" => "รายงานสภาพอากาศของน่าน"
+								                ],
+								                [
+								                    "type" => "message",
+								                    "label" => "แม่ฮ่องสอน",
+								                    "text" => "รายงานสภาพอากาศของแม่ฮ่องสอน"
 								                ]
 								            ]
 								          ]
