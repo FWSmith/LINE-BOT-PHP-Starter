@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 				shuffle($nums);
 				foreach ($nums as $num) {
 				   $Fetch_Train[] = $Query_Train->fetch(PDO::FETCH_ASSOC);
-				   $reply = $Fetch_Train[0]['replybot_train'];
+				   $reply = $Fetch_Train[$num]['replybot_train'];
 				}
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
@@ -655,5 +655,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "2OK";
+echo "OK";
 ?>
