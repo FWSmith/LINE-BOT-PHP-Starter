@@ -463,7 +463,7 @@ if (!is_null($events['events'])) {
 			           				'text' => 'ขอบคุณที่สอนนะครับ'
 			           			]
 			           	];
-					}else if(strpos($text, 'delete') !== false){
+					}else if(strpos($text, 'delete:') !== false){
 						$delete_text = explode(":", $text);
 						$Delete_train = "DELETE FROM `bot_train` WHERE `textbot_train` = :textbot_train AND `trainer_id` = :trainer_id AND `group_id` = :group_id";
 						$Query_Delete = $pdo->prepare($Delete_train);
