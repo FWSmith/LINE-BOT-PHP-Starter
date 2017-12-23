@@ -39,8 +39,8 @@ if (!is_null($events['events'])) {
 					":text_bot" => $text,
 					":group_id" => $groupId
 				));
-				while ($Fetch_Train = $Query_Train->fetch(PDO::FETCH_ASSOC)) {
-					$reply = $Fetch_Train['replybot_train'][0];
+				while ($Fetch_Train[] = $Query_Train->fetch(PDO::FETCH_ASSOC)) {
+					$reply = $Fetch_Train[0]['replybot_train'];
 				}
 				if($groupId != '' && $userId != ''){
 					if(strpos($text, 'สวัสดี') !== false || strpos($text, 'โย่') !== false){
