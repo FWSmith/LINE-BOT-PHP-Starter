@@ -100,7 +100,7 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/cold.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคกลาง",
@@ -123,7 +123,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/rainy.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคตะวันตก",
@@ -146,7 +146,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/sunny.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคเหนือ",
@@ -427,7 +427,7 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/cold.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคกลาง",
@@ -450,7 +450,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/rainy.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคตะวันตก",
@@ -473,7 +473,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/sunny.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคเหนือ",
@@ -989,7 +989,7 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/cold.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/cold.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคกลาง",
@@ -1012,7 +1012,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/rainy.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/rainy.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคตะวันตก",
@@ -1035,7 +1035,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/sunny.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/sunny.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "กรุณาเลือกจังหวัด",
 								            "text" => "ภาคเหนือ",
@@ -1112,7 +1112,7 @@ if (!is_null($events['events'])) {
 								      "type" => "carousel",
 								      "columns" => [
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/jake.jpg",
 								            "imageBackgroundColor" => "#FFFFFF",
 								            "title" => "ตัวเลือก",
 								            "text" => "กรุณาเลือก",
@@ -1135,7 +1135,7 @@ if (!is_null($events['events'])) {
 								            ]
 								          ],
 								          [
-								            "thumbnailImageUrl" => "https://fsmith.net/img/jake2.jpg",
+								            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/jake2.jpg",
 								            "imageBackgroundColor" => "#000000",
 								            "title" => "ตัวเลือก",
 								            "text" => "กรุณาเลือก",
@@ -1172,7 +1172,7 @@ if (!is_null($events['events'])) {
 						// 		      "type" => "carousel",
 						// 		      "columns" => [
 						// 		          [
-						// 		            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+						// 		            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/jake.jpg",
 						// 		            "imageBackgroundColor" => "#FFFFFF",
 						// 		            "title" => "ตัวเลือก",
 						// 		            "text" => "กรุณาเลือก",
@@ -1195,7 +1195,7 @@ if (!is_null($events['events'])) {
 						// 		            ]
 						// 		          ],
 						// 		          [
-						// 		            "thumbnailImageUrl" => "https://fsmith.net/img/jake.jpg",
+						// 		            "thumbnailImageUrl" => "https://codesign-studio.in.th/img/jake.jpg",
 						// 		            "imageBackgroundColor" => "#000000",
 						// 		            "title" => "ตัวเลือก",
 						// 		            "text" => "กรุณาเลือก",
