@@ -1235,7 +1235,16 @@ if (!is_null($events['events'])) {
 			           			]
 			           	];
 					}else{
-						$numbers = range(1, 12);
+						if(strpos($text, 'บ้า')){
+						   $reply = "ใครบ้า";
+						}else if(strpos($text, 'มึง')){
+						   $reply = "พูดจาหยาบคายนะมึง";	
+						}else if(strpos($text, 'กู')){
+						   $reply = "พูดไม่เพราะเลย";	
+						}else if(strpos($text, 'ฝันดี')){
+						   $reply = "ฝันดีเหมือนกันนะ";
+						}else{
+						 $numbers = range(1, 12);
 						shuffle($numbers);
 						foreach ($numbers as $number) {
 						    if($number == 1){
@@ -1262,7 +1271,8 @@ if (!is_null($events['events'])) {
 						    	$reply = "ต้องการคนดูแล";
 						    }else if($number == 12){
 						    	$reply = "อิอิ";
-						    }
+						    } 
+						}
 						}
 						$messages = [
 			           			[
