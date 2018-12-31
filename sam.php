@@ -14,9 +14,13 @@
    $arrayPostData['messages'][0]['type'] = "text";
    $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] อัพเดทนักเรียน 1 คน';
    $arrayPostData['messages'][1]['type'] = "text";
-   $arrayPostData['messages'][1]['text'] = '=============================================';
+   $arrayPostData['messages'][1]['text'] = '[ชื่อ] '.$_POST['student_name'];
    $arrayPostData['messages'][2]['type'] = "text";
-   $arrayPostData['messages'][2]['text'] = '[ชื่อ] '.$_POST['student_name'];
+   $arrayPostData['messages'][2]['text'] = '[วิชา] '.$_POST['student_subject'];
+   $arrayPostData['messages'][3]['type'] = "text";
+   $arrayPostData['messages'][3]['text'] = '[LINE ID] '.$_POST['student_line'];
+   $arrayPostData['messages'][4]['type'] = "text";
+   $arrayPostData['messages'][4]['text'] = '[TEL] '.$_POST['student_phone'];
    pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
