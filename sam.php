@@ -20,6 +20,12 @@
    }else if($_POST['action'] == "reserved"){
     $arrayPostData['messages'][0]['type'] = "text";
     $arrayPostData['messages'][0]['text'] = "------------------------------------------\n[แจ้งเตือน] อัพเดทการจอง\n[ติวเตอร์] ".$_POST['tutor_name']."ทำการจอง\n[วิชา] ".$_POST['work_name']."\n[รหัสงาน] ".$_POST['work_sclass']."\n------------------------------------------";
+   }else if($_POST['action'] == "unreserved"){
+    $arrayPostData['messages'][0]['type'] = "text";
+    $arrayPostData['messages'][0]['text'] = "------------------------------------------\n[แจ้งเตือน] ยกเลิกการจอง\n[ติวเตอร์] ".$_POST['tutor_name']."ยกเลิกการจอง\n[วิชา] ".$_POST['work_name']."\n[รหัสงาน] ".$_POST['work_sclass']."\n------------------------------------------";
+   }else{
+    $arrayPostData['messages'][0]['type'] = "text";
+    $arrayPostData['messages'][0]['text'] = "ง่วงครับ";
    }
    pushMsg($arrayHeader,$arrayPostData);
   
