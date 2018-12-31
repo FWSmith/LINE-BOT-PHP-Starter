@@ -13,6 +13,8 @@
    $arrayPostData['to'] = $id;
    $arrayPostData['messages'][0]['type'] = "text";
    $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] มีนักเรียนเพิ่มเข้ามาในระบบ 1 คน';
+   $arrayPostData['messages'][1]['type'] = "text";
+   $arrayPostData['messages'][1]['text'] = '[แจ้งเตือน] ชื่อนักเรียน : '.$_POST['student_name'];
    pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
