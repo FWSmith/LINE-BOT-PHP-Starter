@@ -12,9 +12,19 @@
    #ตัวอย่าง Message Type "Text + Sticker"
    $arrayPostData['to'] = $id;
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] มีนักเรียนเพิ่มเข้ามาในระบบ 1 คน';
+   $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] อัพเดทนักเรียน 1 คน';
    $arrayPostData['messages'][1]['type'] = "text";
-   $arrayPostData['messages'][1]['text'] = '[แจ้งเตือน] ชื่อนักเรียน : '.$_POST['student_name'];
+   $arrayPostData['messages'][1]['text'] = '=============================================';
+   $arrayPostData['messages'][2]['type'] = "text";
+   $arrayPostData['messages'][2]['text'] = '[ชื่อ] '.$_POST['student_name'];
+   $arrayPostData['messages'][3]['type'] = "text";
+   $arrayPostData['messages'][3]['text'] = '[วิชา] '.$_POST['student_subject'];
+   $arrayPostData['messages'][4]['type'] = "text";
+   $arrayPostData['messages'][4]['text'] = '[ID LINE] '.$_POST['student_line'];
+   $arrayPostData['messages'][5]['type'] = "text";
+   $arrayPostData['messages'][5]['text'] = '[TEL] '.$_POST['student_phone'];
+   $arrayPostData['messages'][6]['type'] = "text";
+   $arrayPostData['messages'][6]['text'] = '=============================================';
    pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
