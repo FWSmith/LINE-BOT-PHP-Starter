@@ -17,6 +17,9 @@
    }else if($_POST['action'] == "tutor_register"){
     $arrayPostData['messages'][0]['type'] = "text";
     $arrayPostData['messages'][0]['text'] = "------------------------------------------\n[แจ้งเตือน] อัพเดทติวเตอร์\n[ชื่อ] ".$_POST['tutor_name']."\n[Line id] ".$_POST['tutor_line']."\n[Tel] ".$_POST['tutor_phone']."\n------------------------------------------";
+   }else if($_POST['action'] == "reserved"){
+    $arrayPostData['messages'][0]['type'] = "text";
+    $arrayPostData['messages'][0]['text'] = "------------------------------------------\n[แจ้งเตือน] อัพเดทการจอง\n[ติวเตอร์] ".$_POST['tutor_name']."ทำการจอง\n[วิชา] ".$_POST['work_name']."\n[รหัสงาน] ".$_POST['work_sclass']."\n------------------------------------------";
    }
    pushMsg($arrayHeader,$arrayPostData);
   
