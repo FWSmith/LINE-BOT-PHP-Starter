@@ -8,7 +8,7 @@
    //รับข้อความจากผู้ใช้
    $message = $arrayJson['events'][0]['message']['text'];
    //รับ id ของผู้ใช้
-   $id = "U72c641a79b2f1a785a7b362df99931ae";
+   $id = ["U72c641a79b2f1a785a7b362df99931ae"];
    #ตัวอย่าง Message Type "Text + Sticker"
    $arrayPostData['to'] = $id;
    $arrayPostData['messages'][0]['type'] = "text";
@@ -24,7 +24,7 @@
    pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
-      $strUrl = "https://api.line.me/v2/bot/message/push";
+      $strUrl = "https://api.line.me/v2/bot/message/multicast";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
       curl_setopt($ch, CURLOPT_HEADER, false);
