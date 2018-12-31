@@ -12,7 +12,7 @@
    #ตัวอย่าง Message Type "Text + Sticker"
    $arrayPostData['to'] = $id;
    $arrayPostData['messages'][0]['type'] = "text";
-   $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน]'.$_POST['student_name'].'ต้องการเรียน'.' ID LINE : '.$_POST['student_line'];
+   $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] มีนักเรียนเพิ่มเข้ามาในระบบ 1 คน';
    pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
