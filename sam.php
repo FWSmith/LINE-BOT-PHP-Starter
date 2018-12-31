@@ -22,6 +22,13 @@
    $arrayPostData['messages'][4]['type'] = "text";
    $arrayPostData['messages'][4]['text'] = '[TEL] '.$_POST['student_phone'];
    pushMsg($arrayHeader,$arrayPostData);
+   if($message == "สวัสดี"){
+     $id = $arrayJson['events'][0]['source']['userId'];
+     $arrayPostData['to'] = $id;
+     $arrayPostData['messages'][0]['type'] = "text";
+     $arrayPostData['messages'][0]['text'] = $id;
+     pushMsg($arrayHeader,$arrayPostData);
+   }
   
    function pushMsg($arrayHeader,$arrayPostData){
       $strUrl = "https://api.line.me/v2/bot/message/multicast";
