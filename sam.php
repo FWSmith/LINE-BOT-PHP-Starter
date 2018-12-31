@@ -7,17 +7,24 @@
    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
    //รับข้อความจากผู้ใช้
    $message = $arrayJson['events'][0]['message']['text'];
-   $id = $arrayJson['events'][0]['source']['userId'];
    //รับ id ของผู้ใช้
-   if($message == "id"){
-     $arrayPostData['to'] = $id;
-     $arrayPostData['messages'][0]['type'] = "text";
-     $arrayPostData['messages'][0]['text'] = $id;
-     pushMsg($arrayHeader,$arrayPostData);
-   }
+   $id = ["U72c641a79b2f1a785a7b362df99931ae","U48354b8b07d4977710684b8b07d2838c"];
+   #ตัวอย่าง Message Type "Text + Sticker"
+   $arrayPostData['to'] = $id;
+   $arrayPostData['messages'][0]['type'] = "text";
+   $arrayPostData['messages'][0]['text'] = '[แจ้งเตือน] อัพเดทนักเรียน 1 คน';
+   $arrayPostData['messages'][1]['type'] = "text";
+   $arrayPostData['messages'][1]['text'] = '[ชื่อ] '.$_POST['student_name'];
+   $arrayPostData['messages'][2]['type'] = "text";
+   $arrayPostData['messages'][2]['text'] = '[วิชา] '.$_POST['student_subject'];
+   $arrayPostData['messages'][3]['type'] = "text";
+   $arrayPostData['messages'][3]['text'] = '[LINE ID] '.$_POST['student_line'];
+   $arrayPostData['messages'][4]['type'] = "text";
+   $arrayPostData['messages'][4]['text'] = '[TEL] '.$_POST['student_phone'];
+   pushMsg($arrayHeader,$arrayPostData);
   
    function pushMsg($arrayHeader,$arrayPostData){
-      $strUrl = "https://api.line.me/v2/bot/message/push";
+      $strUrl = "https://api.line.me/v2/bot/message/multicast";
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL,$strUrl);
       curl_setopt($ch, CURLOPT_HEADER, false);
