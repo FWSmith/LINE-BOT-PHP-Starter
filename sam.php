@@ -26,6 +26,9 @@
    }else if($_POST['action'] == "unreserved"){
     $arrayPostData['messages'][0]['type'] = "text";
     $arrayPostData['messages'][0]['text'] = "[แจ้งเตือน] ยกเลิกการจอง\n - ติวเตอร์ ".$_POST['tutor_name']."\n - วิชา ".$_POST['work_name']."\n - รหัสงาน ".$_POST['work_sclass'];
+   }else if($_POST['action'] == "forget_password"){
+    $arrayPostData['messages'][0]['type'] = "text";
+    $arrayPostData['messages'][0]['text'] = "[แจ้งเตือน] แจ้งลืมรหัสผ่าน\n - ติวเตอร์ ".$_POST['tutor_username']."\n - อีเมล ".$_POST['tutor_email'];
    }else{
     $arrayPostData['messages'][0]['type'] = "text";
     $arrayPostData['messages'][0]['text'] = $message;
