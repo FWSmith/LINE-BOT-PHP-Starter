@@ -25,7 +25,7 @@
     $arrayPostData['messages'][0]['text'] = "------------------------------------------\n[แจ้งเตือน] ยกเลิกการจอง\n[ติวเตอร์] ".$_POST['tutor_name']."ยกเลิกการจอง\n[วิชา] ".$_POST['work_name']."\n[รหัสงาน] ".$_POST['work_sclass']."\n------------------------------------------";
    }else{
     $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "สวัสดีครับ ระบบพร้อมใช้ 24 ชม. ครับ [Bot & System By Fort Sukjirawanit]";
+    $arrayPostData['messages'][0]['text'] = $message;
    }
    pushMsg($arrayHeader,$arrayPostData);
   
